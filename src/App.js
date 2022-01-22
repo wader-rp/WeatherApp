@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import {AppStyled, MainPage} from "./App.styled";
+import {GlobalStyles} from "./style/GlobalStyles";
+import SideBar from "./components/CitiesList/SideBar";
 
-function App() {
+import Header from "./components/Header/Header";
+import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
+
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <>
+          <GlobalStyles />
+          <AppStyled>
+            <MainPage>
+                <Header />
+                <SideBar>
+
+                </SideBar>
+                <WeatherContainer>
+
+                </WeatherContainer>
+
+
+            </MainPage>
+          </AppStyled>
+
+
+      </>
   );
 }
-
-export default App;
