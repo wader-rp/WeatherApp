@@ -1,10 +1,17 @@
 import React from 'react';
-import { SideBarStyled } from "../../style/SideBarStyled";
+import {CitiesList, SideBarStyled} from "../../style/SideBarStyled";
+import { CitiesArr } from "../../data/cities";
 
 const SideBar = () => {
     return (
         <SideBarStyled>
-CHUJ
+            <CitiesList>
+                {CitiesArr.map((element) => {
+                    return (
+                        <li>{element}</li>
+                    )
+                })}
+            </CitiesList>
         </SideBarStyled>
     );
 };
