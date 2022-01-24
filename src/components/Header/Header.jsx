@@ -1,10 +1,12 @@
 import React from 'react';
-import {StyledHeader} from './StyledHeader'
+import {LocInput, StyledHeader} from './StyledHeader'
 
 const Header = () => {
     return (
         <StyledHeader>
-            alasgas
+            <LocInput placeholder={"Enter city name..."}>
+
+            </LocInput>
         </StyledHeader>
     );
 };
