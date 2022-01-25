@@ -6,7 +6,6 @@ export const WeatherContainerStyled = styled.div`
     flex-wrap: wrap;
     position: relative;
     left:20%;
-    
     width: 75%;
     height: 70%;
   

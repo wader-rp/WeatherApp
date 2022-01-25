@@ -1,1 +1,0 @@
-export const CitiesArr = ["Warsaw", "Berlin", "Tokio", "New York", "London", "Paris", "Madrid"]
