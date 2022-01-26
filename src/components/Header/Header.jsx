@@ -16,7 +16,7 @@ const Header = ({ place, setPlace }) => {
         value={place}
       />
       <IconWrapper>
-        <FontAwesomeIcon icon={faSearch} />
+        <FontAwesomeIcon icon={faSearch} color={"white"} size={"1x"} />
       </IconWrapper>
     </StyledHeader>
   );

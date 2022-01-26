@@ -7,27 +7,27 @@ import { useEffect, useState } from "react";
 
 export const App = () => {
   const [weatherData, setWeatherData] = useState([{}]);
-  const [place, setPlace] = useState("");
+  const [city, setCity] = useState("");
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
   useEffect(() => {
-    if (place.length)
+    if (city.length)
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
       )
         .then((response) => response.json())
         .then((data) => {
           setWeatherData(data);
           console.log(weatherData);
         });
-  }, [place]);
+  }, [city]);
 
   return (
     <>
       <GlobalStyles />
       <AppStyled />
       <MainPage>
-        <Header place={place} setPlace={setPlace} />
+        <Header place={city} setPlace={setCity} />
         <SideBar></SideBar>
         <WeatherContainer></WeatherContainer>
       </MainPage>
