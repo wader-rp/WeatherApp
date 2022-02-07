@@ -1,15 +1,24 @@
-import React from 'react';
-import {CitiesList, SideBarStyled} from "../../style/SideBarStyled";
+import React from "react";
+import {
+  CitiesList,
+  SideBarStyled,
+  StyledCity,
+} from "../../style/SideBarStyled";
+import { cities } from "../../data/cities";
 
-
-const SideBar = () => {
-    return (
-        <SideBarStyled>
-            <CitiesList>
-
-            </CitiesList>
-        </SideBarStyled>
-    );
+const SideBar = ({ setCity }) => {
+  return (
+    <SideBarStyled>
+      <CitiesList>
+        {cities &&
+          cities.map((city) => (
+            <StyledCity key={city} onClick={() => setCity(city)}>
+              {city}
+            </StyledCity>
+          ))}
+      </CitiesList>
+    </SideBarStyled>
+  );
 };
 
 export default SideBar;

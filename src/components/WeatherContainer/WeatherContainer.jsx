@@ -4,10 +4,10 @@ import MainBox from "./MainBox/MainBox";
 import DetailsBox from "./DetailsBox/DetailsBox";
 import FiveDaysForecastBox from "./FiveDaysForecastBox/FiveDaysForecastBox";
 
-const WeatherContainer = () => {
+const WeatherContainer = ( { weatherData }) => {
     return (
         <WeatherContainerStyled>
-            <MainBox>
+            <MainBox weatherData={weatherData}>
 
             </MainBox>
             <DetailsBox>

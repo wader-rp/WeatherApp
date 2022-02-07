@@ -1,25 +1,30 @@
-import React from 'react';
-import {CityName, Date, MainBoxStyled, MinAndMaxTmp, Temperature} from "./MainBoxStyled";
-import {CitiesList} from "../../../style/SideBarStyled";
+import React from "react";
+import {
+  CityName,
+  Date,
+  MainBoxStyled,
+  MinAndMaxTmp,
+  Temperature,
+} from "./MainBoxStyled";
 
-const MainBox = () => {
-    return (
-        <MainBoxStyled>
-            <CityName>
-                NEW YORK , US
-            </CityName>
-            <Date>
-                2.21.2022
-            </Date>
-            <Temperature>
-                2°C
-            </Temperature>
-            <MinAndMaxTmp>
-                <span>min. 2°C</span>
-                <span>max. 5°C</span>
-            </MinAndMaxTmp>
-        </MainBoxStyled>
-    );
+const MainBox = ({ weatherData }) => {
+  return (
+    <MainBoxStyled>
+      <CityName>
+        {weatherData.main
+          ? `${weatherData.name} , ${weatherData.sys.country} `
+          : null}
+      </CityName>
+      <Date>{}</Date>
+      {weatherData.main ? (
+        <Temperature>{Math.floor(weatherData.main.temp)}°C</Temperature>
+      ) : null}
+      <MinAndMaxTmp>
+        <span>max. {Math.floor(weatherData.main.temp_max)}°C</span>
+        <span>min. {Math.floor(weatherData.main.temp_min)}°C</span>
+      </MinAndMaxTmp>
+    </MainBoxStyled>
+  );
 };
 
 export default MainBox;

@@ -6,30 +6,35 @@ import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
 import { useEffect, useState } from "react";
 
 export const App = () => {
-  const [weatherData, setWeatherData] = useState([{}]);
+  const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState("");
-  const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+  const API_KEY = process.env.REACT_APP_API_KEY_WEATHER;
 
   useEffect(() => {
-    if (city.length)
+    const debounce = setTimeout(() => {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
       )
         .then((response) => response.json())
         .then((data) => {
           setWeatherData(data);
-          console.log(weatherData);
         });
+    }, 1000);
+
+    return () => clearTimeout(debounce);
   }, [city]);
 
+  console.log(weatherData);
   return (
     <>
       <GlobalStyles />
       <AppStyled />
       <MainPage>
         <Header place={city} setPlace={setCity} />
-        <SideBar></SideBar>
-        <WeatherContainer></WeatherContainer>
+        <SideBar setCity={setCity} />
+        {weatherData.name ? (
+          <WeatherContainer weatherData={weatherData} />
+        ) : null}
       </MainPage>
     </>
   );

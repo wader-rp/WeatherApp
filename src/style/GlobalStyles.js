@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
@@ -9,7 +8,8 @@ export const GlobalStyles = createGlobalStyle`
 }
 html , body {
   height: 100vh;
-  
+  font-family: 'Open Sans','Merriweather', 'Outfit' ,  sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-`
+`;

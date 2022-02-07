@@ -5,17 +5,14 @@ export const MainBoxStyled = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   row-gap: 0.1rem;
-  width: 30%;
+  padding: 10px 0 0 0;
+  color: #ffffff;
+  text-shadow: 0 0 10px #565656;
+  width: 40%;
   height: 60%;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgb(0, 0, 0);
-  background-color: rgba(105, 63, 98, 0.3);
-  background-image: linear-gradient(
-    320deg,
-    rgba(145, 127, 128, 0.3) 0%,
-    rgba(199, 136, 184, 0.3) 50%,
-    rgba(125, 75, 112, 0.3) 100%
-  );
+  background-color: rgba(26, 26, 26, 0.6);
 `;
 
 export const CityName = styled.div`
@@ -23,7 +20,7 @@ export const CityName = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   width: 90%;
   height: 20%;
@@ -42,9 +39,9 @@ export const Temperature = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: -5rem;
-
-  font-size: 5rem;
-  font-weight: 900;
+  font-family: Outfit, sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
   width: 60%;
   height: 50%;
 `;
