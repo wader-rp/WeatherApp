@@ -23,8 +23,8 @@ export const CitiesList = styled.div`
 `;
 
 export const StyledCity = styled.div`
-  color: #f8f8f8;
-  border: 1px #757575 solid;
+  color: #a8a8a8;
+  border: 1px #545454 solid;
   border-radius: 10px;
   padding: 6px 10px;
   display: flex;

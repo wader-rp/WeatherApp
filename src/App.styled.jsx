@@ -22,7 +22,7 @@ export const AppStyled = styled.div`
       0deg,
       rgba(0, 0, 0, 0.75) 0%,
       rgb(31, 31, 31) 24%,
-      rgba(7, 7, 7, 0) 57%,
+      rgba(7, 7, 7, 0.38) 57%,
       rgba(12, 12, 12, 0.6) 100%
     ); //ten kolor do wyjebania
     opacity: 0.9;
@@ -35,4 +35,11 @@ export const MainPage = styled.div`
   height: 100%;
   top: 0;
   left: 0;
+`;
+
+export const DotsStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rem;
 `;

@@ -2,8 +2,6 @@ import React from "react";
 import { LocInput, StyledHeader } from "./StyledHeader";
 
 const Header = ({ place, setPlace }) => {
-  console.log(place);
-
   return (
     <StyledHeader>
       <LocInput

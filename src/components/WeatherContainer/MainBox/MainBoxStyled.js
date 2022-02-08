@@ -11,15 +11,14 @@ export const MainBoxStyled = styled.div`
   width: 40%;
   height: 60%;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgb(0, 0, 0);
-  background-color: rgba(26, 26, 26, 0.6);
+  box-shadow: 10px 10px 15px rgb(17, 28, 17);
+  background-color: rgba(0, 0, 0, 0.51);
 `;
 
 export const CityName = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-size: 2rem;
   font-weight: 600;
   width: 90%;
@@ -40,7 +39,7 @@ export const Temperature = styled.div`
   align-items: center;
   margin-top: -5rem;
   font-family: Outfit, sans-serif;
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 800;
   width: 60%;
   height: 50%;

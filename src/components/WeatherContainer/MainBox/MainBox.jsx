@@ -17,7 +17,7 @@ const MainBox = ({ weatherData }) => {
       </CityName>
       <Date>{}</Date>
       {weatherData.main ? (
-        <Temperature>{Math.floor(weatherData.main.temp)}°C</Temperature>
+        <Temperature>{Math.floor(weatherData.main.temp)} °C</Temperature>
       ) : null}
       <MinAndMaxTmp>
         <span>max. {Math.floor(weatherData.main.temp_max)}°C</span>
