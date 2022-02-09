@@ -4,7 +4,7 @@ export const MainBoxStyled = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  row-gap: 0.1rem;
+
   padding: 10px 0 0 0;
   color: #ffffff;
   text-shadow: 0 0 10px #565656;
@@ -20,7 +20,7 @@ export const CityName = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 800;
   width: 90%;
   height: 20%;
 `;
@@ -29,15 +29,13 @@ export const Date = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  margin-top: -4rem;
+
   width: 90%;
   height: 10%;
 `;
 export const Temperature = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: -5rem;
   font-family: Outfit, sans-serif;
   font-size: 5rem;
   font-weight: 800;
@@ -53,4 +51,11 @@ export const MinAndMaxTmp = styled.div`
   font-weight: 600;
   width: 80%;
   height: 10%;
+`;
+
+export const IconAndTempWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -4rem;
 `;
