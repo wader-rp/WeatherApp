@@ -12,6 +12,7 @@ export const MainBoxStyled = styled.div`
   height: 60%;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgb(17, 28, 17);
+  border: 2px #414141 solid;
   background-color: rgba(0, 0, 0, 0.51);
 `;
 

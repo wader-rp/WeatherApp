@@ -1,11 +1,21 @@
 import React from "react";
-import { SingleDayBoxStyled, DayTemperature } from "./SingleDayBoxStyled";
+import {
+  SingleDayBoxStyled,
+  DayTemperature,
+  MiniIconAndTempWrapper,
+} from "./SingleDayBoxStyled";
 
-const SingleDayBox = ({ day }) => {
+import MiniWeatherIcon from "../../WeatherIcons/MiniWeatherIcons";
+import { IconAndTempWrapper } from "../../MainBox/MainBoxStyled";
+
+const SingleDayBox = ({ day, index }) => {
   console.log(day);
   return (
     <SingleDayBoxStyled>
-      <DayTemperature>{Math.floor(day.temp.day)} °C</DayTemperature>
+      <MiniIconAndTempWrapper>
+        <MiniWeatherIcon icon={day.weather[0].icon} />
+        <DayTemperature>{Math.floor(day.temp.day)} °C</DayTemperature>
+      </MiniIconAndTempWrapper>
     </SingleDayBoxStyled>
   );
 };
