@@ -3,15 +3,16 @@ import {
   SingleDayBoxStyled,
   DayTemperature,
   MiniIconAndTempWrapper,
+  MiniDate,
 } from "./SingleDayBoxStyled";
 
 import MiniWeatherIcon from "../../WeatherIcons/MiniWeatherIcons";
-import { IconAndTempWrapper } from "../../MainBox/MainBoxStyled";
+import DateConverter from "../../../DateConverter/DateConverter";
 
-const SingleDayBox = ({ day, index }) => {
-  console.log(day);
+const SingleDayBox = ({ day }) => {
   return (
     <SingleDayBoxStyled>
+      <MiniDate>{DateConverter(day.dt)}</MiniDate>
       <MiniIconAndTempWrapper>
         <MiniWeatherIcon icon={day.weather[0].icon} />
         <DayTemperature>{Math.floor(day.temp.day)} °C</DayTemperature>

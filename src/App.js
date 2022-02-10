@@ -17,7 +17,6 @@ export const App = () => {
       setIsLoading(true);
     }
     const debounce = setTimeout(() => {
-      console.log("im loading");
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&exclude=minutely,alerts`
       )
@@ -26,11 +25,11 @@ export const App = () => {
           setWeatherData(data);
           setIsLoading(false);
         });
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(debounce);
   }, [city]);
-  console.log(weatherData);
+
   return (
     <>
       <GlobalStyles />

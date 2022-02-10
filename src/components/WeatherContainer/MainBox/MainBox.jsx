@@ -9,6 +9,7 @@ import {
   Temperature,
   IconAndTempWrapper,
 } from "./MainBoxStyled";
+import DateConverter from "../../DateConverter/DateConverter";
 
 const MainBox = ({ weatherData }) => {
   return (
@@ -18,7 +19,7 @@ const MainBox = ({ weatherData }) => {
           ? `${weatherData.name} , ${weatherData.sys.country} `
           : null}
       </CityName>
-      {/*<Date>{}</Date>*/} {/*TODO: dej date*/}
+      <Date>{DateConverter(weatherData.dt)}</Date>
       <IconAndTempWrapper>
         <WeatherIcon icon={weatherData.weather[0].icon} />
         {weatherData.main ? (

@@ -7,6 +7,6 @@ export const DetailsBoxStyled = styled.div`
 
   border-radius: 10px;
   margin-left: 2%;
-  box-shadow: 10px 10px 15px rgb(0, 0, 0);
+  box-shadow: 10px 10px 15px rgb(17, 28, 17);
   background-color: rgba(26, 26, 26, 0.6);
 `;
