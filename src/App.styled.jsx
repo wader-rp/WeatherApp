@@ -43,3 +43,10 @@ export const DotsStyled = styled.div`
   align-items: center;
   margin-top: 15rem;
 `;
+
+export const Error404 = styled.h3`
+  display: flex;
+  justify-content: center;
+  color: #c5c5c5;
+  text-shadow: 0.1px 0.1px #ec0000;
+`;

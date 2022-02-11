@@ -1,4 +1,4 @@
-import { AppStyled, MainPage, DotsStyled } from "./App.styled";
+import { AppStyled, MainPage, DotsStyled, Error404 } from "./App.styled";
 import { GlobalStyles } from "./style/GlobalStyles";
 import SideBar from "./components/CitiesList/SideBar";
 import Header from "./components/Header/Header";
@@ -26,7 +26,7 @@ export const App = () => {
           setIsLoading(false);
         });
     }, 1500);
-
+    console.log(weatherData);
     return () => clearTimeout(debounce);
   }, [city]);
 
@@ -37,6 +37,7 @@ export const App = () => {
       <MainPage>
         <Header place={city} setPlace={setCity} />
         <SideBar setCity={setCity} />
+
         {isLoading ? (
           <DotsStyled>
             <MutatingDots
@@ -50,6 +51,8 @@ export const App = () => {
           </DotsStyled>
         ) : weatherData.name ? (
           <WeatherContainer weatherData={weatherData} city={city} />
+        ) : city.length > 0 ? (
+          <Error404>Wrong city name. Please try again...</Error404>
         ) : null}
       </MainPage>
     </>
