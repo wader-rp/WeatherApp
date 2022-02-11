@@ -21,7 +21,7 @@ export const LocInput = styled.input`
   font-size: 1.5rem;
   color: white;
   border-radius: 50px;
-
+  z-index: 1;
   &:hover {
     background: rgba(0, 0, 0, 0.5);
     transform: scale(1.01);
@@ -30,4 +30,15 @@ export const LocInput = styled.input`
   &:focus {
     outline: none;
   }
+`;
+
+export const ClearInput = styled.div`
+  color: #757575;
+  display: flex;
+
+  align-items: center;
+  overflow: visible;
+  margin-left: -2rem;
+  cursor: pointer;
+  z-index: 2;
 `;

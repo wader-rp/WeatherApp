@@ -1,5 +1,5 @@
 import React from "react";
-import { LocInput, StyledHeader } from "./StyledHeader";
+import { LocInput, StyledHeader, ClearInput } from "./StyledHeader";
 
 const Header = ({ place, setPlace }) => {
   return (
@@ -9,6 +9,7 @@ const Header = ({ place, setPlace }) => {
         onChange={(event) => setPlace(event.target.value)}
         value={place}
       />
+      <ClearInput onClick={() => setPlace("")}>X</ClearInput>
     </StyledHeader>
   );
 };

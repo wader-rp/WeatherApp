@@ -1,9 +1,9 @@
-import { AppStyled, MainPage, DotsStyled } from "./App.styled";
+import { AppStyled, MainPage, DotsStyled, Error404 } from "./App.styled";
 import { GlobalStyles } from "./style/GlobalStyles";
 import SideBar from "./components/CitiesList/SideBar";
 import Header from "./components/Header/Header";
 import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { MutatingDots } from "react-loader-spinner";
 
 export const App = () => {
@@ -17,7 +17,6 @@ export const App = () => {
       setIsLoading(true);
     }
     const debounce = setTimeout(() => {
-      console.log("im loading");
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&exclude=minutely,alerts`
       )
@@ -26,11 +25,11 @@ export const App = () => {
           setWeatherData(data);
           setIsLoading(false);
         });
-    }, 2000);
-
+    }, 1500);
+    console.log(weatherData);
     return () => clearTimeout(debounce);
   }, [city]);
-  console.log(weatherData);
+
   return (
     <>
       <GlobalStyles />
@@ -38,6 +37,7 @@ export const App = () => {
       <MainPage>
         <Header place={city} setPlace={setCity} />
         <SideBar setCity={setCity} />
+
         {isLoading ? (
           <DotsStyled>
             <MutatingDots
@@ -51,6 +51,8 @@ export const App = () => {
           </DotsStyled>
         ) : weatherData.name ? (
           <WeatherContainer weatherData={weatherData} city={city} />
+        ) : city.length > 0 ? (
+          <Error404>Wrong city name. Please try again...</Error404>
         ) : null}
       </MainPage>
     </>

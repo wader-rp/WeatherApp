@@ -21,8 +21,6 @@ const FiveDaysForecastBox = ({ weatherData }) => {
     return () => (sub = false);
   }, [weatherData]);
 
-  console.log(fiveDayForecast);
-
   return (
     <FiveDaysForecastBoxStyled>
       {fiveDayForecast.map((day, index) => (
