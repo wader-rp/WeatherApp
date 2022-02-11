@@ -3,7 +3,7 @@ import { GlobalStyles } from "./style/GlobalStyles";
 import SideBar from "./components/CitiesList/SideBar";
 import Header from "./components/Header/Header";
 import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { MutatingDots } from "react-loader-spinner";
 
 export const App = () => {
