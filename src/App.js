@@ -26,10 +26,10 @@ export const App = () => {
           setIsLoading(false);
         });
     }, 1500);
-    console.log(weatherData);
+
     return () => clearTimeout(debounce);
   }, [city]);
-
+  console.log(weatherData);
   return (
     <>
       <GlobalStyles />

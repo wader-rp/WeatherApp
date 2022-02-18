@@ -45,7 +45,6 @@ export const Temperature = styled.div`
   font-family: Outfit, sans-serif;
   font-size: 5rem;
   font-weight: 800;
-  margin-left: -1rem;
 `;
 export const MinAndMaxTmp = styled.div`
   display: flex;
