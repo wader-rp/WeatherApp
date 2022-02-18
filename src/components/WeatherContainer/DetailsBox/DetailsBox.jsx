@@ -14,7 +14,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DateConverterForHours from "../../DateConverter/DateConverterForHours";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
-const DetailsBox = (props) => {
+const DetailsBox = ({
+  sunset,
+  sunrise,
+  pressure,
+  feelsLike,
+  windSpeed,
+  windDeg,
+}) => {
   return (
     <DetailsBoxStyled>
       <Wind>
@@ -22,15 +29,15 @@ const DetailsBox = (props) => {
           icon={faArrowUp}
           size={"5x"}
           color={"white"}
-          transform={{ rotate: `${props.windDeg}` }}
+          transform={{ rotate: `${windDeg}` }}
         />
-        <WindSpeed>{props.windSpeed} m/s</WindSpeed>
+        <WindSpeed>{windSpeed} m/s</WindSpeed>
       </Wind>
       <DetailsDataWrapper>
-        <FeelsLike>FeelsLike: {Math.round(props.feelsLike)} °C</FeelsLike>
-        <Pressure>Pressure: {props.pressure} HPa</Pressure>
-        <Sunrise>Sunrise: {DateConverterForHours(props.sunrise)}</Sunrise>
-        <Sunset>Sunset: {DateConverterForHours(props.sunset)}</Sunset>
+        <FeelsLike>FeelsLike: {Math.round(feelsLike)} °C</FeelsLike>
+        <Pressure>Pressure: {pressure} HPa</Pressure>
+        <Sunrise>Sunrise: {DateConverterForHours(sunrise)}</Sunrise>
+        <Sunset>Sunset: {DateConverterForHours(sunset)}</Sunset>
       </DetailsDataWrapper>
     </DetailsBoxStyled>
   );
