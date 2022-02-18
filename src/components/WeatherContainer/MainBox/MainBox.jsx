@@ -11,27 +11,28 @@ import {
 } from "./MainBoxStyled";
 import DateConverter from "../../DateConverter/DateConverter";
 
-const MainBox = ({ weatherData }) => {
-  return (
-    <MainBoxStyled>
-      <CityName>
-        {weatherData.main
-          ? `${weatherData.name} , ${weatherData.sys.country} `
-          : null}
-      </CityName>
-      <Date>{DateConverter(weatherData.dt)}</Date>
-      <IconAndTempWrapper>
-        <WeatherIcon icon={weatherData.weather[0].icon} />
-        {weatherData.main ? (
-          <Temperature>{Math.floor(weatherData.main.temp)} °C</Temperature>
-        ) : null}
-      </IconAndTempWrapper>
-      <MinAndMaxTmp>
-        <span>max. {Math.floor(weatherData.main.temp_max)}°C</span>
-        <span>min. {Math.floor(weatherData.main.temp_min)}°C</span>
-      </MinAndMaxTmp>
-    </MainBoxStyled>
-  );
-};
+const MainBox = ({
+  name,
+  tempMin,
+  tempMax,
+  mainTemp,
+  icon,
+  date,
+  main,
+  country,
+}) => (
+  <MainBoxStyled>
+    <CityName>{main ? `${name} , ${country} ` : null}</CityName>
+    <Date>{DateConverter(date)}</Date>
+    <IconAndTempWrapper>
+      <WeatherIcon icon={icon} />
+      {main ? <Temperature>{Math.floor(mainTemp)} °C</Temperature> : null}
+    </IconAndTempWrapper>
+    <MinAndMaxTmp>
+      <span>max. {Math.floor(tempMax)}°C</span>
+      <span>min. {Math.floor(tempMin)}°C</span>
+    </MinAndMaxTmp>
+  </MainBoxStyled>
+);
 
 export default MainBox;

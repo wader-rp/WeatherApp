@@ -9,9 +9,9 @@ import {
 import MiniWeatherIcon from "../../WeatherIcons/MiniWeatherIcons";
 import DateConverter from "../../../DateConverter/DateConverter";
 
-const SingleDayBox = ({ day }) => {
+const SingleDayBox = ({ day, onClick }) => {
   return (
-    <SingleDayBoxStyled>
+    <SingleDayBoxStyled onClick={onClick}>
       <MiniDate>{DateConverter(day.dt)}</MiniDate>
       <MiniIconAndTempWrapper>
         <MiniWeatherIcon icon={day.weather[0].icon} />

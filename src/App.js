@@ -50,7 +50,7 @@ export const App = () => {
             />
           </DotsStyled>
         ) : weatherData.name ? (
-          <WeatherContainer weatherData={weatherData} city={city} />
+          <WeatherContainer weatherData={weatherData} />
         ) : city.length > 0 ? (
           <Error404>Wrong city name. Please try again...</Error404>
         ) : null}
