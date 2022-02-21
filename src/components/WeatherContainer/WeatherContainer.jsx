@@ -27,7 +27,6 @@ const WeatherContainer = ({ weatherData }) => {
   const [activeData, setActiveData] = useState(initialWeatherData(weatherData));
 
   const pickActiveDataFromFiveDays = (data) => {
-    console.log(data);
     setActiveData((prevState) => ({
       ...prevState,
       date: data.date,
