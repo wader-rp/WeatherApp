@@ -32,7 +32,6 @@ const FiveDaysForecastBox = ({ weatherData, onSelect }) => {
     pressure,
     weather,
   }) => {
-    console.log("dupa");
     onSelect({
       date: dt,
       icon: weather[0].icon,

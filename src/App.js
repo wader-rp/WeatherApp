@@ -30,6 +30,7 @@ export const App = () => {
     return () => clearTimeout(debounce);
   }, [city]);
   console.log(weatherData);
+
   return (
     <>
       <GlobalStyles />

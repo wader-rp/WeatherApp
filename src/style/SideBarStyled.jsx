@@ -28,12 +28,29 @@ export const StyledCity = styled.div`
   border-radius: 10px;
   padding: 6px 10px;
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  z-index: 0;
 
-  &:hover {
-    background-color: rgba(80, 80, 80, 0.21);
-    cursor: pointer;
-    transform: scale(1.04);
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+
+    background-color: rgba(79, 79, 79, 0.49);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 200ms ease-in-out;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    transform: scaleY(1);
   }
 `;

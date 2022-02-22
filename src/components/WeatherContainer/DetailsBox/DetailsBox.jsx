@@ -21,6 +21,7 @@ const DetailsBox = ({
   feelsLike,
   windSpeed,
   windDeg,
+  timezone,
 }) => {
   return (
     <DetailsBoxStyled>
@@ -36,8 +37,8 @@ const DetailsBox = ({
       <DetailsDataWrapper>
         <FeelsLike>FeelsLike: {Math.round(feelsLike)} °C</FeelsLike>
         <Pressure>Pressure: {pressure} HPa</Pressure>
-        <Sunrise>Sunrise: {DateConverterForHours(sunrise)}</Sunrise>
-        <Sunset>Sunset: {DateConverterForHours(sunset)}</Sunset>
+        <Sunrise>Sunrise: {DateConverterForHours(sunrise, timezone)}</Sunrise>
+        <Sunset>Sunset: {DateConverterForHours(sunset, timezone)}</Sunset>
       </DetailsDataWrapper>
     </DetailsBoxStyled>
   );

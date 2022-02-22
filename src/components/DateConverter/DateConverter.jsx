@@ -12,7 +12,6 @@ const DateConverter = (timestamp) => {
       return date.getMonth() + 1;
     }
   };
-  console.log(text);
 
   return (
     textfrmt +
