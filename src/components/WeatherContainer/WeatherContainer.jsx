@@ -21,8 +21,10 @@ const initialWeatherData = (weatherData) => ({
   feelsLike: weatherData.main.feels_like,
   pressure: weatherData.main.pressure,
   sunrise: weatherData.sys.sunrise,
-  sunset: weatherData.sys.sunse,
+  sunset: weatherData.sys.sunset,
+  timezone: weatherData.timezone,
 });
+
 const WeatherContainer = ({ weatherData }) => {
   const [activeData, setActiveData] = useState(initialWeatherData(weatherData));
 
@@ -40,6 +42,7 @@ const WeatherContainer = ({ weatherData }) => {
       pressure: data.pressure,
       sunrise: data.sunrise,
       sunset: data.sunset,
+      timezone: data.timezone,
     }));
   };
   const backToMainData = () => {
@@ -65,6 +68,9 @@ const WeatherContainer = ({ weatherData }) => {
           pressure={activeData.pressure}
           sunrise={activeData.sunrise}
           sunset={activeData.sunset}
+          country={activeData.country}
+          name={activeData.name}
+          timezone={activeData.timezone}
         />
       </MainAndDetailsWrapper>
       <FiveDaysForecastBox
