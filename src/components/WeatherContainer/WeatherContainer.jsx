@@ -71,6 +71,7 @@ const WeatherContainer = ({ weatherData }) => {
           country={activeData.country}
           name={activeData.name}
           timezone={activeData.timezone}
+          currentTime={activeData.date}
         />
       </MainAndDetailsWrapper>
       <FiveDaysForecastBox

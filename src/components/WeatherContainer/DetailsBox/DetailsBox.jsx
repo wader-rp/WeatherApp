@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import DateConverterForHours from "../../DateConverter/DateConverterForHours";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import CalculateDayProgression from "../../../helpers/CalculateDayProgression";
 
 const DetailsBox = ({
   sunset,
@@ -22,6 +23,7 @@ const DetailsBox = ({
   windSpeed,
   windDeg,
   timezone,
+  currentTime,
 }) => {
   return (
     <DetailsBoxStyled>
@@ -38,7 +40,10 @@ const DetailsBox = ({
         <FeelsLike>FeelsLike: {Math.round(feelsLike)} °C</FeelsLike>
         <Pressure>Pressure: {pressure} HPa</Pressure>
         <Sunrise>Sunrise: {DateConverterForHours(sunrise, timezone)}</Sunrise>
-        <Sunset>Sunset: {DateConverterForHours(sunset, timezone)}</Sunset>
+        <Sunset>
+          Sunset: {DateConverterForHours(sunset, timezone)}
+          {CalculateDayProgression(sunrise, sunset, currentTime, timezone)}
+        </Sunset>
       </DetailsDataWrapper>
     </DetailsBoxStyled>
   );
