@@ -5,9 +5,13 @@ import {
   Sunrise,
   FeelsLike,
   Pressure,
-  DetailsDataWrapper,
+  DetailsData,
   Wind,
   WindSpeed,
+  DayTimeContainer,
+  DataAndWindWrapper,
+  ProgressBar,
+  SunPlacement,
 } from "./DetailsBoxStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -25,26 +29,36 @@ const DetailsBox = ({
   timezone,
   currentTime,
 }) => {
+  const SunPercent = CalculateDayProgression(
+    sunrise,
+    sunset,
+    currentTime,
+    timezone
+  );
   return (
     <DetailsBoxStyled>
-      <Wind>
-        <FontAwesomeIcon
-          icon={faArrowUp}
-          size={"5x"}
-          color={"white"}
-          transform={{ rotate: `${windDeg}` }}
-        />
-        <WindSpeed>{windSpeed} m/s</WindSpeed>
-      </Wind>
-      <DetailsDataWrapper>
-        <FeelsLike>FeelsLike: {Math.round(feelsLike)} °C</FeelsLike>
-        <Pressure>Pressure: {pressure} HPa</Pressure>
+      <DataAndWindWrapper>
+        <DetailsData>
+          <FeelsLike>FeelsLike: {Math.round(feelsLike)} °C</FeelsLike>
+          <Pressure>Pressure: {pressure} HPa</Pressure>
+        </DetailsData>
+        <Wind>
+          <FontAwesomeIcon
+            icon={faArrowUp}
+            size={"5x"}
+            color={"white"}
+            transform={{ rotate: `${windDeg}` }}
+          />
+          <WindSpeed>{windSpeed} m/s</WindSpeed>
+        </Wind>
+      </DataAndWindWrapper>
+      <DayTimeContainer>
         <Sunrise>Sunrise: {DateConverterForHours(sunrise, timezone)}</Sunrise>
-        <Sunset>
-          Sunset: {DateConverterForHours(sunset, timezone)}
-          {CalculateDayProgression(sunrise, sunset, currentTime, timezone)}
-        </Sunset>
-      </DetailsDataWrapper>
+        <ProgressBar>
+          <SunPlacement pos={`${SunPercent}%`} />
+        </ProgressBar>
+        <Sunset>Sunset: {DateConverterForHours(sunset, timezone)}</Sunset>
+      </DayTimeContainer>
     </DetailsBoxStyled>
   );
 };

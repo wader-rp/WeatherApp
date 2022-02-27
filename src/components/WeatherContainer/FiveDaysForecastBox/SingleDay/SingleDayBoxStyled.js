@@ -28,7 +28,7 @@ export const SingleDayBoxStyled = styled.div`
     position: absolute;
     border-radius: 10px;
     overflow: hidden;
-
+    letter-spacing: 7px;
     height: 100%;
     width: 100%;
     z-index: 2;
