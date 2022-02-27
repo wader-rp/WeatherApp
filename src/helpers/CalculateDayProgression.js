@@ -7,7 +7,7 @@ const CalculateDayProgression = (sunrise, sunset, daytime, timezone) => {
   const sunProgress = Math.floor((100 * timeFromSunset) / timeDiff);
   console.log(sunProgress);
 
-  return `${sunProgress}%`;
+  return sunProgress;
 };
 
 export default CalculateDayProgression;
