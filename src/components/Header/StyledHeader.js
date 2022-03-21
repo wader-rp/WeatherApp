@@ -14,14 +14,15 @@ export const LocInput = styled.input`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(42, 42, 42, 0.53);
+  background: rgba(0, 0, 0, 0);
   min-width: 30%;
   min-height: 1.5rem;
-  padding: 0.5rem 2.5rem;
+  padding: 0.5rem 2rem;
   font-size: 1.5rem;
   color: white;
-  border-radius: 50px;
+  border-radius: 10px;
   z-index: 1;
+
   &:hover {
     background: rgba(0, 0, 0, 0.5);
     transform: scale(1.01);

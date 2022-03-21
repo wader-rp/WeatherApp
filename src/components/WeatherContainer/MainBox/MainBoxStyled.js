@@ -7,11 +7,11 @@ export const MainBoxStyled = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   gap: 3rem;
-
   color: #ffffff;
   text-shadow: 0 0 10px #565656;
-  min-width: 25rem;
-  min-height: 25rem;
+  width: 30rem;
+  min-height: 27rem;
+  height: 80%;
 
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgb(17, 28, 17);

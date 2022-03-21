@@ -1,13 +1,15 @@
 import React from "react";
 
-const CalculateDayProgression = (sunrise, sunset, daytime, timezone) => {
+const calculateDayProgression = (sunrise, sunset, daytime, timezone) => {
   const currentTime = daytime + timezone;
   const timeFromSunset = currentTime - (sunrise + timezone);
   const timeDiff = sunset - sunrise;
-  const sunProgress = Math.floor((100 * timeFromSunset) / timeDiff);
-  console.log(sunProgress);
+  const res = Math.floor((100 * timeFromSunset) / timeDiff);
 
-  return sunProgress;
+  if (res > 100) {
+    return 100;
+  }
+  return res;
 };
 
-export default CalculateDayProgression;
+export default calculateDayProgression;

@@ -5,8 +5,9 @@ export const FiveDaysForecastBoxStyled = styled.div`
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: space-between;
+
   width: 100%;
-  height: 30%;
+  height: 25%;
 
   border-radius: 10px;
 

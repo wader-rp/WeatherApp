@@ -45,9 +45,9 @@ const WeatherContainer = ({ weatherData }) => {
       timezone: data.timezone,
     }));
   };
-  const backToMainData = () => {
-    setActiveData(initialWeatherData(weatherData));
-  };
+  // const backToMainData = () => {
+  //   setActiveData(initialWeatherData(weatherData));
+  // };
   return (
     <WeatherContainerStyled>
       <MainAndDetailsWrapper>
