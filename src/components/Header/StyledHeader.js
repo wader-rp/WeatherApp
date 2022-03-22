@@ -15,7 +15,7 @@ export const LocInput = styled.input`
   justify-content: center;
   align-items: center;
   border: 5px rgba(218, 150, 0, 0.87) solid;
-  background-color: rgba(69, 141, 252, 0.5);
+  background-color: rgba(1, 58, 224, 0.3);
   min-width: 30%;
   min-height: 1.5rem;
   padding: 0.45rem 2rem;

@@ -54,6 +54,7 @@ const WeatherContainer = ({ weatherData }) => {
   // const backToMainData = () => {
   //   setActiveData(initialWeatherData(weatherData));
   // };
+
   return (
     <WeatherContainerStyled>
       <MainAndDetailsWrapper>

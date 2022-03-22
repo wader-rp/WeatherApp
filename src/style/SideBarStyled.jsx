@@ -4,7 +4,7 @@ export const SideBarStyled = styled.div`
   position: absolute;
   display: flex;
   left: -2.1rem;
-  top: 1.5rem;
+  top: 1rem;
   align-items: center;
   min-width: 1rem;
   flex-direction: column;
@@ -24,7 +24,7 @@ export const CitiesList = styled.div`
 export const StyledCity = styled.div`
   color: #fdfdfd;
   border: 2px rgba(218, 150, 0, 0.69) solid;
-  background-color: rgba(69, 141, 252, 0.6);
+  background-color: rgba(1, 58, 224, 0.3);
   border-radius: 10px;
   padding: 7px 15px 7px 15px;
   display: flex;
@@ -43,7 +43,7 @@ export const StyledCity = styled.div`
     right: -1px;
     bottom: -1px;
     border-radius: 10px;
-    background-color: rgba(218, 150, 0, 0.5);
+    background-color: rgba(218, 150, 0, 0.96);
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 200ms ease-in-out;

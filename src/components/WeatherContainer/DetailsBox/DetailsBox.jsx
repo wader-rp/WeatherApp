@@ -31,7 +31,6 @@ const DetailsBox = ({
   timezone,
   humidity,
   currentTime,
-
   cloudiness,
 }) => {
   const sunPercent = calculateDayProgression(

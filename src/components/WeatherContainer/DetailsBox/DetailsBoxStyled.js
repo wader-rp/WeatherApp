@@ -13,7 +13,7 @@ export const DetailsBoxStyled = styled.div`
   margin-left: 1rem;
   box-shadow: 7px 7px 10px rgb(1, 55, 119);
   border: 7px rgba(218, 150, 0, 0.87) solid;
-  background-color: rgba(69, 141, 252, 0.6);
+  background-color: rgba(1, 58, 224, 0.3);
 `;
 
 export const DetailsData = styled.div`
