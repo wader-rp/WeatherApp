@@ -16,10 +16,13 @@ const initialWeatherData = (weatherData) => ({
   mainTemp: weatherData.main.temp,
   tempMax: weatherData.main.temp_max,
   tempMin: weatherData.main.temp_min,
+  humidity: weatherData.main.humidity,
   windDeg: weatherData.wind.deg,
   windSpeed: weatherData.wind.speed,
   feelsLike: weatherData.main.feels_like,
   pressure: weatherData.main.pressure,
+  cloudiness: weatherData.clouds.all,
+  visibility: weatherData.visibility,
   sunrise: weatherData.sys.sunrise,
   sunset: weatherData.sys.sunset,
   timezone: weatherData.timezone,
@@ -40,6 +43,9 @@ const WeatherContainer = ({ weatherData }) => {
       windSpeed: data.windSpeed,
       feelsLike: data.feelsLike,
       pressure: data.pressure,
+      humidity: data.humidity,
+      cloudiness: data.cloudiness,
+      visibility: data.visibility,
       sunrise: data.sunrise,
       sunset: data.sunset,
       timezone: data.timezone,
@@ -68,10 +74,11 @@ const WeatherContainer = ({ weatherData }) => {
           pressure={activeData.pressure}
           sunrise={activeData.sunrise}
           sunset={activeData.sunset}
-          country={activeData.country}
-          name={activeData.name}
+          humidity={activeData.humidity}
           timezone={activeData.timezone}
           currentTime={activeData.date}
+          cloudiness={activeData.cloudiness}
+          visibility={activeData.visibility}
         />
       </MainAndDetailsWrapper>
       <FiveDaysForecastBox

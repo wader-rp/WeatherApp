@@ -8,7 +8,6 @@ export const FiveDaysForecastBoxStyled = styled.div`
 
   width: 100%;
   height: 25%;
-
   border-radius: 10px;
 
   padding: 1rem 0;

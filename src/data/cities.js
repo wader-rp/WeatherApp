@@ -10,6 +10,4 @@ export const cities = [
   "Sydney",
   "Hong Kong",
   "Shanghai",
-  "Delhi",
-  "Moscow",
 ];

@@ -17,6 +17,7 @@ const FiveDaysForecastBox = ({ weatherData, onSelect }) => {
         if (sub) {
           setFiveDayForecast(data.daily.splice(1, 5));
         }
+        console.log(fiveDayForecast);
       });
     return () => (sub = false);
   }, [weatherData]);
@@ -31,6 +32,8 @@ const FiveDaysForecastBox = ({ weatherData, onSelect }) => {
     feels_like,
     pressure,
     weather,
+    humidity,
+    clouds,
   }) => {
     onSelect({
       date: dt,
@@ -40,10 +43,12 @@ const FiveDaysForecastBox = ({ weatherData, onSelect }) => {
       tempMin: temp.min,
       windDeg: wind_deg,
       windSpeed: wind_speed,
-      feelsLike: feels_like,
+      feelsLike: feels_like.day,
       pressure,
       sunrise,
       sunset,
+      humidity,
+      cloudiness: clouds,
     });
   };
   return (

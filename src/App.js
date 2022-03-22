@@ -43,11 +43,11 @@ export const App = () => {
           <DotsStyled>
             <MutatingDots
               type={"Circles"}
-              color={"#8f8f8f"}
-              secondaryColor={"#004600"}
-              height={120}
-              width={120}
-              radius={14}
+              color={"rgb(1, 55, 119)"}
+              secondaryColor={"rgba(218, 150, 0, 0.87)"}
+              height={140}
+              width={150}
+              radius={16}
             />
           </DotsStyled>
         ) : weatherData.name ? (
