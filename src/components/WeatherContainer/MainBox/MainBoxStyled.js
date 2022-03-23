@@ -7,20 +7,14 @@ export const MainBoxStyled = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   gap: 3rem;
-
   color: #ffffff;
-  text-shadow: 0 0 10px #565656;
-  min-width: 25rem;
-  min-height: 25rem;
-
+  width: 30rem;
+  min-height: 27rem;
+  height: 80%;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgb(17, 28, 17);
-  border: 2px #414141 solid;
-  background-color: rgba(0, 0, 0, 0.51);
-  &:hover {
-    background-color: rgb(3, 3, 3);
-    cursor: pointer;
-  }
+  box-shadow: 7px 7px 10px rgb(1, 55, 119);
+  border: 7px rgba(218, 150, 0, 0.87) solid;
+  background-color: rgba(1, 58, 224, 0.3);
 `;
 
 export const CityName = styled.div`

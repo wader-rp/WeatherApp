@@ -7,9 +7,7 @@ export const cities = [
   "Madrid",
   "Istanbul",
   "Berlin",
-  "Melbourne",
+  "Sydney",
   "Hong Kong",
-  "Rome",
-  "Delhi",
-  "Moscow",
+  "Shanghai",
 ];

@@ -29,8 +29,8 @@ const MainBox = ({
       {main ? <Temperature>{Math.floor(mainTemp)} °C</Temperature> : null}
     </IconAndTempWrapper>
     <MinAndMaxTmp>
-      <span>max. {Math.floor(tempMax)}°C</span>
       <span>min. {Math.floor(tempMin)}°C</span>
+      <span>max. {Math.floor(tempMax)}°C</span>
     </MinAndMaxTmp>
   </MainBoxStyled>
 );

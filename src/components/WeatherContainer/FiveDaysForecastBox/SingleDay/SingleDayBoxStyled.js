@@ -10,9 +10,9 @@ export const SingleDayBoxStyled = styled.div`
   flex-direction: column;
   min-width: min-content;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgb(17, 28, 17);
-  border: 2px #414141 solid;
-  background-color: rgba(3, 3, 3, 0.6);
+  box-shadow: 7px 7px 10px rgb(1, 55, 119);
+  border: 7px rgba(218, 150, 0, 0.87) solid;
+  background-color: rgba(1, 58, 224, 0.3);
   z-index: 1;
   cursor: pointer;
 
@@ -40,7 +40,9 @@ export const SingleDayBoxStyled = styled.div`
   &:hover:after,
   &:focus:after {
     opacity: 0.95;
-    background-color: #000000;
+    background-color: rgba(218, 150, 0, 0.96);
+    color: black;
+    font-weight: bolder;
   }
 `;
 
@@ -49,7 +51,7 @@ export const DayTemperature = styled.div`
   color: #ffffff;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 `;
 export const MiniIconAndTempWrapper = styled.div`
   display: flex;
@@ -63,5 +65,5 @@ export const MiniDate = styled.div`
   color: #ffffff;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
 `;
