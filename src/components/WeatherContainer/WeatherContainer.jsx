@@ -85,6 +85,7 @@ const WeatherContainer = ({ weatherData }) => {
       <FiveDaysForecastBox
         weatherData={weatherData}
         onSelect={pickActiveDataFromFiveDays}
+        activeData={activeData}
       />
     </WeatherContainerStyled>
   );

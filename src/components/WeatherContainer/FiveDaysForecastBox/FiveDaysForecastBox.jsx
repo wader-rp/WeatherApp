@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import { FiveDaysForecastBoxStyled } from "./FiveDaysForecastBoxStyled";
 import SingleDayBox from "./SingleDay/SingleDayBox";
 
-const FiveDaysForecastBox = ({ weatherData, onSelect }) => {
+const FiveDaysForecastBox = ({
+  weatherData,
+  onSelect,
+  activeData,
+  setActiveData,
+}) => {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const API_KEY_FIVE_DAYS = process.env.REACT_APP_API_KEY_WEATHER;
   const { lat, lon } = weatherData.coord;
-  const initData = ({ weatherData }) => ({
-    dt: weatherData.dt,
-  });
+
   useEffect(() => {
     let sub = true;
     fetch(
@@ -23,7 +26,22 @@ const FiveDaysForecastBox = ({ weatherData, onSelect }) => {
     return () => (sub = false);
   }, [weatherData]);
 
-  console.log(weatherData);
+  const exchangeData = (index, activeData) => {
+    const newArrAdd = [...fiveDayForecast];
+    newArrAdd.splice(index, 1);
+    if (newArrAdd.length !== 5) {
+      newArrAdd.unshift(activeData);
+    }
+    newArrAdd.sort((a,b) => {
+      const keyA = a.dt || a.date,
+            keyB = b.date || b.dt;
+            if (keyA < keyB) return -1;
+            if (keyA > keyB) return 1;
+            return 0;
+    })
+    setFiveDayForecast(newArrAdd);
+  };
+
 
   const handleSelect = (
     index,
@@ -41,50 +59,38 @@ const FiveDaysForecastBox = ({ weatherData, onSelect }) => {
       clouds,
     }
   ) => {
-    onSelect({
-      date: dt,
-      icon: weather[0].icon,
-      mainTemp: temp.day,
-      tempMax: temp.max,
-      tempMin: temp.min,
-      windDeg: wind_deg,
-      windSpeed: wind_speed,
-      feelsLike: feels_like.day,
-      pressure,
-      sunrise,
-      sunset,
-      humidity,
-      cloudiness: clouds,
-    });
-    deleteDayFromFiveDaysForecast(index);
+    if (fiveDayForecast[index].dt) {
+      onSelect({
+        date: dt,
+        icon: weather[0].icon,
+        mainTemp: temp.day,
+        tempMax: temp.max,
+        tempMin: temp.min,
+        windDeg: wind_deg,
+        windSpeed: wind_speed,
+        feelsLike: feels_like.day,
+        pressure,
+        sunrise,
+        sunset,
+        humidity,
+        cloudiness: clouds,
+      });
+    } else {
+      setActiveData(fiveDayForecast[index]);
+    }
   };
 
-  const deleteDayFromFiveDaysForecast = (index) => {
-    const newArr = [...fiveDayForecast];
-    newArr.slice(index, 1);
-    setFiveDayForecast(newArr);
-    addCurrentDayToFiveDaysForecast(weatherData);
-  };
-
-  const addCurrentDayToFiveDaysForecast = (weatherData) => {
-    const newArrAdd = [...fiveDayForecast];
-    const temp = {
-      day: weatherData.main.temp,
-    };
-    newArrAdd.unshift({
-      dt: weatherData.dt,
-      weather: weatherData.weather,
-      temp: temp,
-    });
-    setFiveDayForecast(newArrAdd);
-  };
   return (
     <FiveDaysForecastBoxStyled>
       {fiveDayForecast.map((day, index) => (
         <SingleDayBox
           day={day}
           key={index}
-          onClick={() => handleSelect(index, day)}
+          onClick={() => {
+            handleSelect(index, day);
+            exchangeData(index, activeData);
+
+          }}
         />
       ))}
     </FiveDaysForecastBoxStyled>
