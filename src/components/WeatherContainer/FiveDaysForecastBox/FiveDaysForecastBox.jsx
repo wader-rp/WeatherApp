@@ -32,16 +32,15 @@ const FiveDaysForecastBox = ({
     if (newArrAdd.length !== 5) {
       newArrAdd.unshift(activeData);
     }
-    newArrAdd.sort((a,b) => {
-      const keyA = a.dt || a.date,
-            keyB = b.date || b.dt;
-            if (keyA < keyB) return -1;
-            if (keyA > keyB) return 1;
-            return 0;
-    })
+    newArrAdd.sort((a, b) => {
+      const keyA = a.dt || a.date;
+      const keyB = b.date || b.dt;
+      if (keyA < keyB) return -1;
+      if (keyA > keyB) return 1;
+      return 0;
+    });
     setFiveDayForecast(newArrAdd);
   };
-
 
   const handleSelect = (
     index,
@@ -89,7 +88,6 @@ const FiveDaysForecastBox = ({
           onClick={() => {
             handleSelect(index, day);
             exchangeData(index, activeData);
-
           }}
         />
       ))}

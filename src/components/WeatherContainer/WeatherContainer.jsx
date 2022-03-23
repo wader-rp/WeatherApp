@@ -51,9 +51,6 @@ const WeatherContainer = ({ weatherData }) => {
       timezone: data.timezone,
     }));
   };
-  // const backToMainData = () => {
-  //   setActiveData(initialWeatherData(weatherData));
-  // };
 
   return (
     <WeatherContainerStyled>
@@ -86,6 +83,7 @@ const WeatherContainer = ({ weatherData }) => {
         weatherData={weatherData}
         onSelect={pickActiveDataFromFiveDays}
         activeData={activeData}
+        setActiveData={setActiveData}
       />
     </WeatherContainerStyled>
   );
