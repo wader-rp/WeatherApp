@@ -15,7 +15,7 @@ const SingleDayBox = ({ day, onClick }) => {
       <MiniIconAndTempWrapper>
         <MiniWeatherIcon icon={day.icon} />
 
-        <DayTemperature>{day.mainTemp} °C</DayTemperature>
+        <DayTemperature>{Math.round(day.mainTemp)} °C</DayTemperature>
       </MiniIconAndTempWrapper>
     </SingleDayBoxStyled>
   );
