@@ -6,16 +6,16 @@ import {
   MiniDate,
 } from "./SingleDayBoxStyled";
 import MiniWeatherIcon from "../../WeatherIcons/MiniWeatherIcons";
-import DateConverter from "../../../DateConverter/DateConverter";
+import dateConverter from "../../../DateConverter/DateConverter";
 
 const SingleDayBox = ({ day, onClick }) => {
   return (
     <SingleDayBoxStyled onClick={onClick}>
-      <MiniDate>{DateConverter(day.dt)}</MiniDate>
+      <MiniDate>{dateConverter(day.date)}</MiniDate>
       <MiniIconAndTempWrapper>
-        <MiniWeatherIcon icon={day.weather[0].icon} />
+        <MiniWeatherIcon icon={day.icon} />
 
-        <DayTemperature>{Math.floor(day.temp.day)} °C</DayTemperature>
+        <DayTemperature>{day.mainTemp} °C</DayTemperature>
       </MiniIconAndTempWrapper>
     </SingleDayBoxStyled>
   );

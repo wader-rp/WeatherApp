@@ -22,9 +22,10 @@ export const DetailsData = styled.div`
   justify-content: center;
   flex-direction: row;
   font-size: 2rem;
-  gap: 5rem;
-  border-right: 5px solid rgba(218, 150, 0, 0.87);
-  padding-right: 3rem;
+  gap: 4rem;
+  padding: 0.1rem 0 0.5rem 0;
+  box-shadow: 3px 0 70px rgba(1, 58, 224, 0.3);
+  border-radius: 10px;
   width: 30rem;
   height: 100%;
 `;
@@ -41,6 +42,7 @@ export const DataInfo = styled.div`
   letter-spacing: 3.5px;
   font-weight: 600;
   font-size: 1.3rem;
+
   text-shadow: 1.5px 1.5px 2.5px #000000;
 `;
 
@@ -49,6 +51,7 @@ export const Wind = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-left: 1rem;
   gap: 1.3rem;
   width: 50%;
   color: rgb(255, 174, 0);
@@ -64,7 +67,7 @@ export const DataAndWindWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem 0;
+  padding: 0.2rem 1rem 0;
 `;
 export const DetailsDataWrapper = styled.div`
   display: flex;
@@ -91,7 +94,8 @@ export const ProgressBar = styled.div`
   height: 0.3rem;
   border-radius: 30px;
   background: rgb(255, 179, 132);
-  border: 1px solid #000000;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.26);
 `;
 
 export const SunPlacement = styled.div`
@@ -99,7 +103,11 @@ export const SunPlacement = styled.div`
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
-  background: rgb(255, 99, 0);
+  background: radial-gradient(
+    circle,
+    rgba(255, 99, 0, 1) 45%,
+    rgb(255, 249, 0) 100%
+  );
 `;
 
 export const SunriseSunset = styled.div`

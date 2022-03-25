@@ -1,5 +1,3 @@
-import React from "react";
-
 const calculateDayProgression = (sunrise, sunset, daytime, timezone) => {
   const currentTime = daytime + timezone;
   const timeFromSunset = currentTime - (sunrise + timezone);

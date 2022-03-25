@@ -43,12 +43,13 @@ export const StyledCity = styled.div`
     right: -1px;
     bottom: -1px;
     border-radius: 10px;
-    background-color: rgba(218, 150, 0, 0.96);
+    background-color: rgba(218, 150, 0, 0.87);
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 200ms ease-in-out;
     z-index: -1;
   }
+
   &:hover::before {
     transform: scaleY(1);
   }
