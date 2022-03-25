@@ -1,0 +1,17 @@
+export const parseFiveDaysDataToRequiredFormat = (data) => ({
+  ...data,
+  date: data.dt,
+  icon: data.weather[0].icon,
+  mainTemp: data.temp.day,
+  tempMax: data.temp.max,
+  tempMin: data.temp.min,
+  windDeg: data.wind_deg,
+  windSpeed: data.wind_speed,
+  feelsLike: data.feels_like.day,
+  pressure: data.pressure,
+  humidity: data.humidity,
+  cloudiness: data.clouds,
+  sunrise: data.sunrise,
+  sunset: data.sunset,
+  timezone: data.timezone,
+});

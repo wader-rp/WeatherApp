@@ -11,7 +11,7 @@ export const App = () => {
   const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const API_KEY = process.env.REACT_APP_API_KEY_WEATHER;
-
+  console.log(weatherData);
   useEffect(() => {
     if (city) {
       setIsLoading(true);

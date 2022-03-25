@@ -17,7 +17,7 @@ import {
 } from "./DetailsBoxStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import DateConverterForHours from "../../DateConverter/DateConverterForHours";
+import dateConverterForHours from "../../DateConverter/dateConverterForHours";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import calculateDayProgression from "../../../helpers/CalculateDayProgression";
 
@@ -39,6 +39,7 @@ const DetailsBox = ({
     currentTime,
     timezone
   );
+  console.log(sunPercent);
   return (
     <DetailsBoxStyled>
       <DataAndWindWrapper>
@@ -72,20 +73,22 @@ const DetailsBox = ({
         </Wind>
       </DataAndWindWrapper>
       <DayTimeContainer>
-        <ProgressBar>
-          <SunPlacement pos={`${sunPercent}%`} />
-        </ProgressBar>
+        {sunPercent > 0 && sunPercent < 100 && (
+          <ProgressBar>
+            <SunPlacement pos={`${sunPercent}%`} />
+          </ProgressBar>
+        )}
         <SunriseAndSunsetWrapper>
           <SunriseSunset>
             Sunrise:{" "}
             <SunriseSunsetHour>
-              {DateConverterForHours(sunrise, timezone)}
+              {dateConverterForHours(sunrise, timezone)}
             </SunriseSunsetHour>
           </SunriseSunset>
           <SunriseSunset>
             Sunset:{" "}
             <SunriseSunsetHour>
-              {DateConverterForHours(sunset, timezone)}
+              {dateConverterForHours(sunset, timezone)}
             </SunriseSunsetHour>
           </SunriseSunset>
         </SunriseAndSunsetWrapper>
