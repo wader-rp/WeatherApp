@@ -10,7 +10,7 @@ export const App = () => {
   const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const API_KEY = process.env.REACT_APP_API_KEY_WEATHER;
+  const API_KEY = "958c2a7e21f1fdde6aea565becbd9aa4";
   console.log(weatherData);
   useEffect(() => {
     if (city) {
