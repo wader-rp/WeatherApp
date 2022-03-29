@@ -10,13 +10,12 @@ export const StyledHeader = styled.header`
 `;
 
 export const LocInput = styled.input`
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 5px rgba(218, 150, 0, 0.87) solid;
   background-color: rgba(1, 58, 224, 0.3);
-  min-width: 30%;
+  width: 30rem;
   min-height: 1.5rem;
   padding: 0.45rem 2rem;
   font-size: 1.5rem;
@@ -41,10 +40,15 @@ export const LocInput = styled.input`
 export const ClearInput = styled.div`
   color: #ffffff;
   display: flex;
-
   align-items: center;
   overflow: visible;
   margin-left: -2rem;
   cursor: pointer;
   z-index: 2;
+`;
+
+export const HeaderAndSuggestionsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 `;

@@ -5,13 +5,14 @@ import Header from "./components/Header/Header";
 import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
 import { useEffect, useState } from "react";
 import { MutatingDots } from "react-loader-spinner";
+import { parseFiveDaysDataToRequiredFormat } from "./helpers/parseFiveDaysDataToRequiredFormat";
 
 export const App = () => {
   const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const API_KEY = "958c2a7e21f1fdde6aea565becbd9aa4";
-  console.log(weatherData);
+  const API_KEY = process.env.REACT_APP_API_KEY_WEATHER;
+
   useEffect(() => {
     if (city) {
       setIsLoading(true);

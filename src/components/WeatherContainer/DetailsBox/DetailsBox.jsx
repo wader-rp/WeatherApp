@@ -8,19 +8,16 @@ import {
   ProgressBar,
   SunPlacement,
   SunriseAndSunsetWrapper,
-  DataDisplay,
-  DataInfo,
   DetailsDataWrapper,
   WindSpeed,
   SunriseSunset,
   SunriseSunsetHour,
 } from "./DetailsBoxStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import dateConverterForHours from "../../DateConverter/dateConverterForHours";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import calculateDayProgression from "../../../helpers/CalculateDayProgression";
-
+import calculateDayProgression from "../../../helpers/calculateDayProgression";
+import { WeatherContainerDetailsData } from "../WeatherContainerDetailsData";
 const DetailsBox = ({
   sunset,
   sunrise,
@@ -39,26 +36,28 @@ const DetailsBox = ({
     currentTime,
     timezone
   );
-  console.log(sunPercent);
+
   return (
     <DetailsBoxStyled>
       <DataAndWindWrapper>
         <DetailsData>
           <DetailsDataWrapper>
-            <DataDisplay>
-              <DataInfo>FeelsLike</DataInfo> {Math.round(feelsLike)} °C
-            </DataDisplay>
-            <DataDisplay>
-              <DataInfo>Pressure</DataInfo> {pressure} HPa
-            </DataDisplay>
-          </DetailsDataWrapper>
-          <DetailsDataWrapper>
-            <DataDisplay>
-              <DataInfo>Humidity</DataInfo> {humidity}%
-            </DataDisplay>
-            <DataDisplay>
-              <DataInfo>Cloudiness</DataInfo> {cloudiness}%
-            </DataDisplay>
+            <WeatherContainerDetailsData
+              desc={"FeelsLike"}
+              descValue={`${Math.round(feelsLike)}°C`}
+            />
+            <WeatherContainerDetailsData
+              desc={"Pressure"}
+              descValue={`${pressure}HPa`}
+            />
+            <WeatherContainerDetailsData
+              desc={"Humidity"}
+              descValue={`${humidity}%`}
+            />
+            <WeatherContainerDetailsData
+              desc={"Cloudiness"}
+              descValue={`${cloudiness}%`}
+            />
           </DetailsDataWrapper>
         </DetailsData>
         <Wind>

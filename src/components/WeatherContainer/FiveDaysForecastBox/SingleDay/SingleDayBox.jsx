@@ -22,5 +22,3 @@ const SingleDayBox = ({ day, onClick }) => {
 };
 
 export default SingleDayBox;
-
-//MAth.round
