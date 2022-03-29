@@ -7,7 +7,7 @@ import { handleSelect } from "../../../helpers/handleSelect";
 
 const FiveDaysForecastBox = ({ weatherData, activeData, setActiveData }) => {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
-  const API_KEY_FIVE_DAYS_FORECAST = "958c2a7e21f1fdde6aea565becbd9aa4";
+  const API_KEY_FIVE_DAYS_FORECAST = process.env.REACT_APP_API_KEY_WEATHER;
   const { lat, lon } = weatherData.coord;
 
   useEffect(() => {

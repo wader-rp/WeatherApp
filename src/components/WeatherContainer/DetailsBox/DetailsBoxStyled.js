@@ -22,8 +22,6 @@ export const DetailsData = styled.div`
   justify-content: center;
   flex-direction: row;
   font-size: 2rem;
-  gap: 4rem;
-  padding: 0.1rem 0 0.5rem 0;
   box-shadow: 3px 0 70px rgba(1, 58, 224, 0.3);
   border-radius: 10px;
   width: 30rem;
@@ -36,6 +34,7 @@ export const DataDisplay = styled.div`
   font-size: 2.2rem;
   color: white;
   gap: 0.3rem;
+  width: 25%;
 `;
 export const DataInfo = styled.div`
   color: rgb(255, 174, 0);
@@ -72,8 +71,9 @@ export const DataAndWindWrapper = styled.div`
 export const DetailsDataWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
+  gap: 1.5rem 6.5rem;
+  width: 80%;
 `;
 
 /////////////////////Daytime//////////////////////
