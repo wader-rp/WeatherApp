@@ -24,7 +24,7 @@ const FiveDaysForecastBox = ({ weatherData, activeData, setActiveData }) => {
         }
       });
     return () => (sub = false);
-  }, [weatherData]);
+  }, [weatherData, API_KEY_FIVE_DAYS_FORECAST, lat, lon]);
 
   return (
     <FiveDaysForecastBoxStyled>

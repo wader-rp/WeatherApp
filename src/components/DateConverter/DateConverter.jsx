@@ -1,5 +1,3 @@
-import React from "react";
-
 const DateConverter = (timestamp) => {
   const date = new Date(timestamp * 1000);
   const text = date.toString();

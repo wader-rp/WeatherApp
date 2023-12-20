@@ -5,7 +5,6 @@ import Header from "./components/Header/Header";
 import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
 import { useEffect, useState } from "react";
 import { MutatingDots } from "react-loader-spinner";
-import { parseFiveDaysDataToRequiredFormat } from "./helpers/parseFiveDaysDataToRequiredFormat";
 
 export const App = () => {
   const [weatherData, setWeatherData] = useState({});
@@ -29,7 +28,7 @@ export const App = () => {
     }, 1500);
 
     return () => clearTimeout(debounce);
-  }, [city]);
+  }, [city, API_KEY]);
 
   return (
     <>
@@ -52,8 +51,6 @@ export const App = () => {
           </DotsStyled>
         ) : weatherData.name ? (
           <WeatherContainer weatherData={weatherData} />
-        ) : city.length > 0 ? (
-          <Error404>Wrong city name. Please try again...</Error404>
         ) : null}
       </MainPage>
     </>

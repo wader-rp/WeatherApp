@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  CitiesList,
-  SideBarStyled,
-  StyledCity,
-} from "../../style/SideBarStyled";
+import { CitiesList, SideBarStyled } from "../../style/SideBarStyled";
+import { CityStyled } from "../../style/CityDisplayStyled";
 import { cities } from "../../data/cities";
 
 const SideBar = ({ setCity }) => {
@@ -12,9 +9,9 @@ const SideBar = ({ setCity }) => {
       <CitiesList>
         {cities &&
           cities.map((city) => (
-            <StyledCity key={city} onClick={() => setCity(city)}>
+            <CityStyled key={city} onClick={() => setCity(city)}>
               {city}
-            </StyledCity>
+            </CityStyled>
           ))}
       </CitiesList>
     </SideBarStyled>

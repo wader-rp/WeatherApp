@@ -1,9 +1,11 @@
 import React from "react";
 import {
-  LocInput,
-  StyledHeader,
+  LocInputStyled,
+  HeaderStyled,
   ClearInput,
   HeaderAndSuggestionsWrapper,
+  AutocompleteDropdownStyled,
+  InputWrapper,
 } from "./StyledHeader";
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -11,22 +13,20 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 
 import { useState } from "react";
-import { StyledCity } from "../../style/SideBarStyled";
+import { Suggestions } from "./suggestions/Suggestions";
 const Header = ({ place, setPlace }) => {
   const [coords, setCoords] = useState({
     lat: null,
-    lon: null,
+    lng: null,
   });
 
   const handleSelect = async (value) => {
     const result = await geocodeByAddress(value);
-    const ll = await getLatLng(result[0]);
-    console.log(ll);
+    const latAndLng = await getLatLng(result[0]);
     setPlace(value);
-    setCoords(ll);
+    setCoords(latAndLng);
   };
-  console.log(coords);
-  console.log(place);
+
   return (
     <PlacesAutocomplete
       value={place}
@@ -34,41 +34,31 @@ const Header = ({ place, setPlace }) => {
       onSelect={handleSelect}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-        <StyledHeader>
+        <HeaderStyled>
           <HeaderAndSuggestionsWrapper>
-            <LocInput
-              {...getInputProps({
-                placeholder: "Search Places ...",
-              })}
-            />
-            <ClearInput onClick={() => setPlace("")}>X</ClearInput>
-            <div className="autocomplete-dropdown-container">
-              {loading && <div>Loading...</div>}
-              {suggestions.map((suggestion) => {
-                console.log(suggestions);
-                return (
-                  <StyledCity {...getSuggestionItemProps(suggestion, {})}>
-                    <span>{suggestion.description}</span>
-                  </StyledCity>
-                );
-              })}
-            </div>
+            <InputWrapper>
+              <LocInputStyled
+                {...getInputProps({
+                  placeholder: "Search Places ...",
+                })}
+              ></LocInputStyled>
+              <ClearInput onClick={() => setPlace("")}>X</ClearInput>
+            </InputWrapper>
+            <AutocompleteDropdownStyled>
+              {loading ? (
+                <div>Loading...</div>
+              ) : (
+                <Suggestions
+                  suggestions={suggestions}
+                  getSuggestionItemProps={getSuggestionItemProps}
+                />
+              )}
+            </AutocompleteDropdownStyled>
           </HeaderAndSuggestionsWrapper>
-        </StyledHeader>
+        </HeaderStyled>
       )}
     </PlacesAutocomplete>
   );
 };
 
-/* <StyledHeader>
-      <LocInput
-        placeholder={"Enter city name..."}
-        onChange={(event) => setPlace(event.target.value)}
-        value={place}
-      />
-      <ClearInput onClick={() => setPlace("")}>X</ClearInput>
-    </StyledHeader>
-  );
-};
-*/
 export default Header;

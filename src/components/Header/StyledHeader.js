@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.header`
+export const HeaderStyled = styled.header`
   position: relative;
   width: 100%;
-  height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 `;
 
-export const LocInput = styled.input`
+export const InputWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+`;
+
+export const LocInputStyled = styled.input`
   border: 5px rgba(218, 150, 0, 0.87) solid;
   background-color: rgba(1, 58, 224, 0.3);
   width: 30rem;
@@ -45,10 +46,18 @@ export const ClearInput = styled.div`
   margin-left: -2rem;
   cursor: pointer;
   z-index: 2;
+  font-weight: bolder;
+  color: rgba(218, 150, 0, 0.87);
+  text-shadow: none;
 `;
 
 export const HeaderAndSuggestionsWrapper = styled.div`
   display: flex;
+
   flex-direction: column;
   gap: 0;
+`;
+
+export const AutocompleteDropdownStyled = styled.div`
+  color: black;
 `;
