@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
-  position: relative;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 2rem;
 `;
 
 export const InputWrapper = styled.div`
   display: flex;
+`;
+export const CitiesDropDownWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const LocInputStyled = styled.input`
@@ -53,7 +57,6 @@ export const ClearInput = styled.div`
 
 export const HeaderAndSuggestionsWrapper = styled.div`
   display: flex;
-
   flex-direction: column;
   gap: 0;
 `;

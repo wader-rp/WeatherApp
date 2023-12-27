@@ -1,6 +1,5 @@
 import { AppStyled, MainPage, DotsStyled, Error404 } from "./App.styled";
 import { GlobalStyles } from "./style/GlobalStyles";
-import SideBar from "./components/CitiesList/SideBar";
 import Header from "./components/Header/Header";
 import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
 import { useEffect, useState } from "react";
@@ -35,8 +34,7 @@ export const App = () => {
       <GlobalStyles />
       <AppStyled />
       <MainPage>
-        <Header place={city} setPlace={setCity} />
-        <SideBar setCity={setCity} />
+        <Header city={city} setCity={setCity}  />
 
         {isLoading ? (
           <DotsStyled>

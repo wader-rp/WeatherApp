@@ -7,6 +7,7 @@ export const CityStyled = styled.div`
   border-radius: 10px;
   padding: 7px 15px 7px 15px;
   display: flex;
+  min-width: 9rem;
   position: relative;
   justify-content: center;
   align-items: center;

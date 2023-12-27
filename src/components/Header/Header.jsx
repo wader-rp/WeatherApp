@@ -14,7 +14,9 @@ import PlacesAutocomplete, {
 
 import { useState } from "react";
 import { Suggestions } from "./suggestions/Suggestions";
-const Header = ({ place, setPlace }) => {
+import { CitiesDropdown } from "./citiesDropdown/CitiesDropdown";
+
+const Header = ({ city, setCity }) => {
   const [coords, setCoords] = useState({
     lat: null,
     lng: null,
@@ -23,18 +25,15 @@ const Header = ({ place, setPlace }) => {
   const handleSelect = async (value) => {
     const result = await geocodeByAddress(value);
     const latAndLng = await getLatLng(result[0]);
-    setPlace(value);
+    setCity(value);
     setCoords(latAndLng);
   };
 
   return (
-    <PlacesAutocomplete
-      value={place}
-      onChange={setPlace}
-      onSelect={handleSelect}
-    >
+    <PlacesAutocomplete value={city} onChange={setCity} onSelect={handleSelect}>
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <HeaderStyled>
+          <CitiesDropdown setCity={setCity} city={city} />
           <HeaderAndSuggestionsWrapper>
             <InputWrapper>
               <LocInputStyled
@@ -42,7 +41,7 @@ const Header = ({ place, setPlace }) => {
                   placeholder: "Search Places ...",
                 })}
               ></LocInputStyled>
-              <ClearInput onClick={() => setPlace("")}>X</ClearInput>
+              <ClearInput onClick={() => setCity("")}>X</ClearInput>
             </InputWrapper>
             <AutocompleteDropdownStyled>
               {loading ? (
