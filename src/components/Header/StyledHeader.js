@@ -20,7 +20,6 @@ export const CitiesDropDownWrapper = styled.div`
 export const LocInputStyled = styled.input`
   border: 5px rgba(218, 150, 0, 0.87) solid;
   background-color: rgba(1, 58, 224, 0.3);
-  width: 30rem;
   min-height: 1.5rem;
   padding: 0.45rem 2rem;
   font-size: 1.5rem;

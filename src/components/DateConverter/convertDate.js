@@ -1,4 +1,4 @@
-export const convertDate = (timestamp) => {
+const convertDate = (timestamp) => {
   const date = new Date(timestamp * 1000);
   const text = date.toString();
   let dayName = text.substring(0, 3);
@@ -14,3 +14,5 @@ export const convertDate = (timestamp) => {
   };
   return `${dayName} ${date.getDate()}.${getMonthNumberFormatted()}.${date.getFullYear()}`;
 };
+
+export default convertDate;
