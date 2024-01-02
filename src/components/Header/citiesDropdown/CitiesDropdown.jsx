@@ -6,15 +6,15 @@ import {
   CitiesStyled,
   CitiesDropdownWrapper,
 } from "./CitiesDropdownStyled";
-import CitiesList from "../../citiesList/CitiesList";
+import CitiesList from "../../CitiesList/CitiesList";
 
-export const CitiesDropdown = ({ setCity, city }) => {
+export const CitiesDropdown = ({ setCity }) => {
   const [isCitiesListOpen, setIsCitiesListOpen] = useState(false);
 
   const handleListOpen = () => {
     setIsCitiesListOpen((prev) => !prev);
   };
-  console.log(isCitiesListOpen);
+
   return (
     <CitiesDropdownWrapper>
       <CitiesDropdownStyled style={{ cursor: "pointer" }}>

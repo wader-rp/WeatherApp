@@ -6,7 +6,7 @@ import {
   MiniDate,
 } from "./SingleDayBoxStyled";
 import MiniWeatherIcon from "../../WeatherIcons/MiniWeatherIcons";
-import dateConverter from "../../../DateConverter/DateConverter";
+import dateConverter from "../../../DateConverter/convertDate";
 
 const SingleDayBox = ({ day, onClick }) => {
   return (

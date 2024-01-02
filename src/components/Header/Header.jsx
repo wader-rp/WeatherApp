@@ -1,4 +1,3 @@
-import React from "react";
 import {
   LocInputStyled,
   HeaderStyled,
@@ -33,7 +32,7 @@ const Header = ({ city, setCity }) => {
     <PlacesAutocomplete value={city} onChange={setCity} onSelect={handleSelect}>
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <HeaderStyled>
-          <CitiesDropdown setCity={setCity} city={city} />
+          <CitiesDropdown setCity={setCity} />
           <HeaderAndSuggestionsWrapper>
             <InputWrapper>
               <LocInputStyled

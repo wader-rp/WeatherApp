@@ -1,4 +1,4 @@
-export const handleSelect = (data, setActiveData) => {
+export const handleOneDaySelect = (data, setActiveData) => {
   setActiveData((prevState) => ({
     ...prevState,
     date: data.date,

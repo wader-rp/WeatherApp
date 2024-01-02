@@ -15,6 +15,7 @@ export const App = () => {
     if (city) {
       setIsLoading(true);
     }
+
     const debounce = setTimeout(() => {
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&exclude=minutely,alerts`
@@ -34,7 +35,7 @@ export const App = () => {
       <GlobalStyles />
       <AppStyled />
       <MainPage>
-        <Header city={city} setCity={setCity}  />
+        <Header city={city} setCity={setCity} />
 
         {isLoading ? (
           <DotsStyled>

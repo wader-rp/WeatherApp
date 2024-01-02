@@ -9,12 +9,12 @@ import {
   Temperature,
   IconAndTempWrapper,
 } from "./MainBoxStyled";
-import DateConverter from "../../DateConverter/DateConverter";
+import convertDate from "../../DateConverter/convertDate";
 
 const MainBox = ({ name, tempMin, tempMax, mainTemp, icon, date, country }) => (
   <MainBoxStyled>
     <CityName>{`${name} , ${country}`}</CityName>
-    <Date>{DateConverter(date)}</Date>
+    <Date>{convertDate(date)}</Date>
     <IconAndTempWrapper>
       <WeatherIcon icon={icon} />
       <Temperature>{Math.floor(mainTemp)} °C</Temperature>

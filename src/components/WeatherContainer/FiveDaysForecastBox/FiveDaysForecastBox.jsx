@@ -3,7 +3,7 @@ import { FiveDaysForecastBoxStyled } from "./FiveDaysForecastBoxStyled";
 import SingleDayBox from "./SingleDay/SingleDayBox";
 import { parseFiveDaysDataToRequiredFormat } from "../../../helpers/parseFiveDaysDataToRequiredFormat";
 import { exchangeData } from "../../../helpers/exchangeData";
-import { handleSelect } from "../../../helpers/handleSelect";
+import { handleOneDaySelect } from "../../../helpers/handleOneDaySelect";
 
 const FiveDaysForecastBox = ({ weatherData, activeData, setActiveData }) => {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
@@ -23,9 +23,14 @@ const FiveDaysForecastBox = ({ weatherData, activeData, setActiveData }) => {
           );
         }
       });
+
     return () => (sub = false);
   }, [weatherData, API_KEY_FIVE_DAYS_FORECAST, lat, lon]);
 
+  const handleOnClick = (day, index) => {
+    handleOneDaySelect(day, setActiveData);
+    exchangeData(index, activeData, setFiveDayForecast);
+  };
   return (
     <FiveDaysForecastBoxStyled>
       {fiveDayForecast.map((day, index) => (
@@ -33,13 +38,7 @@ const FiveDaysForecastBox = ({ weatherData, activeData, setActiveData }) => {
           day={day}
           key={index}
           onClick={() => {
-            handleSelect(day, setActiveData);
-            exchangeData(
-              index,
-              activeData,
-              fiveDayForecast,
-              setFiveDayForecast
-            );
+            handleOnClick(day, index);
           }}
         />
       ))}

@@ -14,7 +14,7 @@ import {
   SunriseSunsetHour,
 } from "./DetailsBoxStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import dateConverterForHours from "../../DateConverter/dateConverterForHours";
+import convertTimestampToHours from "../../DateConverter/convertTimestampToHours";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import calculateDayProgression from "../../../helpers/calculateDayProgression";
 import { WeatherContainerDetailsData } from "../WeatherContainerDetailsData";
@@ -81,13 +81,13 @@ const DetailsBox = ({
           <SunriseSunset>
             Sunrise:{" "}
             <SunriseSunsetHour>
-              {dateConverterForHours(sunrise, timezone)}
+              {convertTimestampToHours(sunrise, timezone)}
             </SunriseSunsetHour>
           </SunriseSunset>
           <SunriseSunset>
             Sunset:{" "}
             <SunriseSunsetHour>
-              {dateConverterForHours(sunset, timezone)}
+              {convertTimestampToHours(sunset, timezone)}
             </SunriseSunsetHour>
           </SunriseSunset>
         </SunriseAndSunsetWrapper>
