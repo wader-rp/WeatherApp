@@ -9,23 +9,37 @@ export const App = () => {
   const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const API_KEY = process.env.REACT_APP_API_KEY_WEATHER;
 
   useEffect(() => {
-    if (city) {
-      setIsLoading(true);
-    }
+    const fetchData = async () => {
+      if (city) {
+        setIsLoading(true);
 
-    const debounce = setTimeout(() => {
-      fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&exclude=minutely,alerts`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setWeatherData(data);
-          setIsLoading(false);
-        });
-    }, 1500);
+        return await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&exclude=minutely,alerts`
+        )
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            setWeatherData(data);
+            setError(null);
+          })
+          .catch((error) => {
+            setError("Bad request");
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      }
+    };
+    setWeatherData({});
+    const debounce = setTimeout(fetchData, 1500);
 
     return () => clearTimeout(debounce);
   }, [city, API_KEY]);
@@ -50,6 +64,10 @@ export const App = () => {
           </DotsStyled>
         ) : weatherData.name ? (
           <WeatherContainer weatherData={weatherData} />
+        ) : error ? (
+          <Error404>
+            Please enter valid city name or choose one from the list
+          </Error404>
         ) : null}
       </MainPage>
     </>

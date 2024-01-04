@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
   WeatherContainerStyled,
-  MainAndDetailsWrapper,
+  WeatherContainerWrapper,
 } from "./WeatherContainerStyled";
 import MainBox from "./MainBox/MainBox";
 import DetailsBox from "./DetailsBox/DetailsBox";
@@ -12,8 +12,8 @@ const WeatherContainer = ({ weatherData }) => {
   const [activeData, setActiveData] = useState(initialWeatherData(weatherData));
 
   return (
-    <WeatherContainerStyled>
-      <MainAndDetailsWrapper>
+    <WeatherContainerWrapper>
+      <WeatherContainerStyled>
         <MainBox
           main={activeData.main}
           name={activeData.name}
@@ -37,13 +37,14 @@ const WeatherContainer = ({ weatherData }) => {
           cloudiness={activeData.cloudiness}
           visibility={activeData.visibility}
         />
-      </MainAndDetailsWrapper>
-      <FiveDaysForecastBox
-        weatherData={weatherData}
-        activeData={activeData}
-        setActiveData={setActiveData}
-      />
-    </WeatherContainerStyled>
+
+        <FiveDaysForecastBox
+          weatherData={weatherData}
+          activeData={activeData}
+          setActiveData={setActiveData}
+        />
+      </WeatherContainerStyled>
+    </WeatherContainerWrapper>
   );
 };
 

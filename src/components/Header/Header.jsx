@@ -1,10 +1,13 @@
 import {
-  LocInputStyled,
+  CityInputStyled,
   HeaderStyled,
   ClearInput,
   HeaderAndSuggestionsWrapper,
   AutocompleteDropdownStyled,
   InputWrapper,
+  WeatherAppLogo,
+  LogoAndTitleWrapper,
+  WeatherAppTitle,
 } from "./StyledHeader";
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -32,14 +35,18 @@ const Header = ({ city, setCity }) => {
     <PlacesAutocomplete value={city} onChange={setCity} onSelect={handleSelect}>
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <HeaderStyled>
-          <CitiesDropdown setCity={setCity} />
+          <LogoAndTitleWrapper>
+            <WeatherAppLogo src="/WAlogo.png" />
+            <WeatherAppTitle>WeatherApp</WeatherAppTitle>
+          </LogoAndTitleWrapper>
+
           <HeaderAndSuggestionsWrapper>
             <InputWrapper>
-              <LocInputStyled
+              <CityInputStyled
                 {...getInputProps({
-                  placeholder: "Search Places ...",
+                  placeholder: "City search...",
                 })}
-              ></LocInputStyled>
+              ></CityInputStyled>
               <ClearInput onClick={() => setCity("")}>X</ClearInput>
             </InputWrapper>
             <AutocompleteDropdownStyled>
@@ -53,6 +60,7 @@ const Header = ({ city, setCity }) => {
               )}
             </AutocompleteDropdownStyled>
           </HeaderAndSuggestionsWrapper>
+          <CitiesDropdown setCity={setCity} />
         </HeaderStyled>
       )}
     </PlacesAutocomplete>

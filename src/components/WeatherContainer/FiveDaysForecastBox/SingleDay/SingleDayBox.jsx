@@ -1,4 +1,3 @@
-import React from "react";
 import {
   SingleDayBoxStyled,
   DayTemperature,
@@ -8,17 +7,15 @@ import {
 import MiniWeatherIcon from "../../WeatherIcons/MiniWeatherIcons";
 import dateConverter from "../../../DateConverter/convertDate";
 
-const SingleDayBox = ({ day, onClick }) => {
-  return (
-    <SingleDayBoxStyled onClick={onClick}>
-      <MiniDate>{dateConverter(day.date)}</MiniDate>
-      <MiniIconAndTempWrapper>
-        <MiniWeatherIcon icon={day.icon} />
+const SingleDayBox = ({ day, onClick }) => (
+  <SingleDayBoxStyled onClick={onClick}>
+    <MiniDate>{dateConverter(day.date)}</MiniDate>
+    <MiniIconAndTempWrapper>
+      <MiniWeatherIcon icon={day.icon} />
 
-        <DayTemperature>{Math.round(day.mainTemp)} °C</DayTemperature>
-      </MiniIconAndTempWrapper>
-    </SingleDayBoxStyled>
-  );
-};
+      <DayTemperature>{Math.round(day.mainTemp)} °C</DayTemperature>
+    </MiniIconAndTempWrapper>
+  </SingleDayBoxStyled>
+);
 
 export default SingleDayBox;

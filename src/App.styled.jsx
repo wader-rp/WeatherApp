@@ -11,7 +11,13 @@ export const AppStyled = styled.div`
   width: 100%;
 `;
 
-export const MainPage = styled.div``;
+export const MainPage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+`;
 
 export const DotsStyled = styled.div`
   display: flex;
@@ -22,8 +28,9 @@ export const DotsStyled = styled.div`
 
 export const Error404 = styled.h3`
   display: flex;
+  text-align: center;
   margin-top: -1.4rem;
   justify-content: center;
-  color: #030303;
+  margin-top: 5rem;
   text-shadow: 0.1px 0.1px #ec0000;
 `;

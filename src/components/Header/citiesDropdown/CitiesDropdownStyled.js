@@ -10,5 +10,5 @@ export const CitiesStyled = styled.h2`
   align-items: center;
 `;
 export const CitiesDropdownWrapper = styled.div`
-  display: flex;
+  position: relative;
 `;

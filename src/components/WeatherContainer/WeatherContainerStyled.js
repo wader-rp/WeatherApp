@@ -4,15 +4,21 @@ export const WeatherContainerStyled = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  top: 5%;
-  left: 17%;
-  width: 80%;
-  height: 78%;
+  margin: 2rem 0;
+  gap: 2rem;
+  padding: 0 2rem;
+
+  @media (max-width: 1440px) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
 `;
 
-export const MainAndDetailsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  width: 100%;
+export const WeatherContainerWrapper = styled.div`
+  overflow-x: hidden;
 `;

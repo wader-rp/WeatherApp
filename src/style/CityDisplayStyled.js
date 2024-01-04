@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CityStyled = styled.div`
   color: #fdfdfd;
   border: 2px rgba(218, 150, 0, 0.69) solid;
-  background-color: rgba(1, 58, 224, 0.3);
+  background-color: rgba(1, 58, 224, 1);
   border-radius: 10px;
   padding: 7px 15px 7px 15px;
   display: flex;
@@ -33,4 +33,8 @@ export const CityStyled = styled.div`
   &:hover::before {
     transform: scaleY(1);
   }
+`;
+
+export const SuggestionsStyled = styled.div`
+  max-width: 24.5rem;
 `;

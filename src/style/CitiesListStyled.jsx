@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const CitiesListStyled = styled.div`
+  position: absolute;
+  left: -1.5rem;
+  top: -1rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   position: absolute;
-  top: 1rem;
+
   align-items: center;
-  min-width: 1rem;
   flex-direction: column;
   background-color: rgba(1, 58, 224, 0.4);
   padding: 0.7rem;
