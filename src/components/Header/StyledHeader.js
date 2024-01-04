@@ -48,7 +48,7 @@ export const CityInputStyled = styled.input`
     outline: none;
   }
   @media (max-width: 480px) {
-    width: 15rem;
+    width: 17rem;
   }
 `;
 
