@@ -47,6 +47,9 @@ export const CityInputStyled = styled.input`
   &:focus {
     outline: none;
   }
+  @media (max-width: 480px) {
+    width: 15rem;
+  }
 `;
 
 export const ClearInput = styled.div`
