@@ -28,6 +28,7 @@ export const CityInputStyled = styled.input`
   background-color: rgba(1, 58, 224, 0.3);
   padding: 0.45rem 1rem;
   font-size: 1.5rem;
+  width: 20rem;
   color: white;
   letter-spacing: 4px;
   font-weight: 600;
