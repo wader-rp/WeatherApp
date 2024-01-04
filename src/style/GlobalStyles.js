@@ -12,7 +12,11 @@ export const GlobalStyles = createGlobalStyle`
     
     font-family: 'Open Sans', 'Merriweather', 'Outfit', sans-serif;
     -webkit-font-smoothing: antialiased;
-    text-shadow: 1.5px 1.5px 7px #000000;
+   
+
+    @media (min-width: 768px) {
+      text-shadow: 1.5px 1.5px 7px #000000;
+    }
   }
 
 `;
