@@ -11,9 +11,8 @@ export const DetailsBoxStyled = styled.div`
   min-height: 27rem;
   padding: 2rem;
   gap: 4rem;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 7px 7px 10px rgb(1, 55, 119);
-
   background-color: ${detailsBoxBackgroundColor};
 
   @media (max-width: 1440px) {
@@ -22,6 +21,7 @@ export const DetailsBoxStyled = styled.div`
 
   @media (max-width: 768px) {
     padding: 1rem 0;
+    box-shadow: none;
   }
 `;
 

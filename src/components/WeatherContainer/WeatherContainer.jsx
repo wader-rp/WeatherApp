@@ -8,7 +8,7 @@ import DetailsBox from "./DetailsBox/DetailsBox";
 import FiveDaysForecastBox from "./FiveDaysForecastBox/FiveDaysForecastBox";
 import { initialWeatherData } from "../../data/initialWeatherData";
 
-const WeatherContainer = ({ weatherData }) => {
+const WeatherContainer = ({ weatherData, scrollBackForFullInfo }) => {
   const [activeData, setActiveData] = useState(initialWeatherData(weatherData));
 
   return (
@@ -42,6 +42,7 @@ const WeatherContainer = ({ weatherData }) => {
           weatherData={weatherData}
           activeData={activeData}
           setActiveData={setActiveData}
+          scrollBackForFullInfo={scrollBackForFullInfo}
         />
       </WeatherContainerStyled>
     </WeatherContainerWrapper>

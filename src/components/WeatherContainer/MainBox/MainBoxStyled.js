@@ -20,6 +20,10 @@ export const MainBoxStyled = styled.div`
     width: 100%;
   }
 
+  @media (max-width: 768px) {
+    box-shadow: none;
+  }
+
   @media (max-width: 500px) {
     padding: 0;
   }

@@ -11,7 +11,7 @@ export const WeatherContainerStyled = styled.div`
   @media (max-width: 1440px) {
     flex-direction: column;
     justify-content: center;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
   }
 
   @media (max-width: 768px) {

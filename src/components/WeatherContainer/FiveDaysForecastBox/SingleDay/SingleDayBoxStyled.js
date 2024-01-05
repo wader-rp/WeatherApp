@@ -10,10 +10,10 @@ export const SingleDayBoxStyled = styled.div`
   min-width: min-content;
   border-radius: 10px;
   box-shadow: 7px 7px 10px rgb(1, 55, 119);
-
   background-color: rgba(1, 58, 224, 0.3);
   z-index: 1;
   cursor: pointer;
+
   @media (hover: hover) {
     &:after {
       content: "Details";
@@ -50,6 +50,10 @@ export const SingleDayBoxStyled = styled.div`
     &:focus:after {
     }
   }
+  @media (max-width: 768px) {
+    padding: 1rem;
+    box-shadow: none;
+  }
 `;
 
 export const DayTemperature = styled.div`
@@ -75,6 +79,7 @@ export const MiniDate = styled.h5`
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
+  text-wrap: no-wrap;
 
   @media (max-width: 1440px) {
     font-size: 0.9rem;

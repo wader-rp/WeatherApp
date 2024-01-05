@@ -5,7 +5,12 @@ import { parseFiveDaysDataToRequiredFormat } from "../../../helpers/parseFiveDay
 import { exchangeData } from "../../../helpers/exchangeData";
 import { handleOneDaySelect } from "../../../helpers/handleOneDaySelect";
 
-const FiveDaysForecastBox = ({ weatherData, activeData, setActiveData }) => {
+const FiveDaysForecastBox = ({
+  weatherData,
+  activeData,
+  setActiveData,
+  scrollBackForFullInfo,
+}) => {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const API_KEY_FIVE_DAYS_FORECAST = process.env.REACT_APP_API_KEY_WEATHER;
   const { lat, lon } = weatherData.coord;
@@ -30,7 +35,9 @@ const FiveDaysForecastBox = ({ weatherData, activeData, setActiveData }) => {
   const handleOnClick = (day, index) => {
     handleOneDaySelect(day, setActiveData);
     exchangeData(index, activeData, setFiveDayForecast);
+    scrollBackForFullInfo();
   };
+
   return (
     <FiveDaysForecastBoxStyled>
       {fiveDayForecast.map((day, index) => (

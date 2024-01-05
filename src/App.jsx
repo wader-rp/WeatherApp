@@ -2,10 +2,11 @@ import { AppStyled, MainPage, DotsStyled, Error404 } from "./App.styled";
 import { GlobalStyles } from "./style/GlobalStyles";
 import Header from "./components/Header/Header";
 import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MutatingDots } from "react-loader-spinner";
 
 export const App = () => {
+  const weatherContainerRef = useRef(null);
   const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -44,6 +45,11 @@ export const App = () => {
     return () => clearTimeout(debounce);
   }, [city, API_KEY]);
 
+  const scrollBackForFullInfo = () => {
+    console.log(weatherContainerRef.current);
+    weatherContainerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <GlobalStyles />
@@ -63,7 +69,12 @@ export const App = () => {
             />
           </DotsStyled>
         ) : weatherData.name ? (
-          <WeatherContainer weatherData={weatherData} />
+          <div ref={weatherContainerRef}>
+            <WeatherContainer
+              weatherData={weatherData}
+              scrollBackForFullInfo={scrollBackForFullInfo}
+            />
+          </div>
         ) : error ? (
           <Error404>
             Please enter valid city name or choose one from the list
