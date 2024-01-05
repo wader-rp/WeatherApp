@@ -15,10 +15,10 @@ const WeatherContainer = ({ weatherData }) => {
 
   const scrollBackForFullInfo = () => {
     weatherContainerRef.current.scrollIntoView({
-      behavior: "smooth",
+      behavior: "auto",
     });
   };
-  console.log(activeData);
+
   return (
     <WeatherContainerWrapper ref={weatherContainerRef}>
       <WeatherContainerStyled>
