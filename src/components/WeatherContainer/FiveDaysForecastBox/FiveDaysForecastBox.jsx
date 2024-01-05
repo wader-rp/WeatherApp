@@ -43,7 +43,7 @@ const FiveDaysForecastBox = ({
       {fiveDayForecast.map((day, index) => (
         <SingleDayBox
           dayInfo={day}
-          key={index}
+          key={day.dt ?? day.date}
           onClick={() => {
             handleOnClick(day, index);
           }}
