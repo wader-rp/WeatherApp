@@ -7,8 +7,8 @@ import {
 import MiniWeatherIcon from "../../WeatherIcons/MiniWeatherIcons";
 import dateConverter from "../../../DateConverter/convertDate";
 
-const SingleDayBox = ({ dayInfo, onClick }) => (
-  <SingleDayBoxStyled onClick={onClick}>
+const SingleDayBox = ({ dayInfo, handleOnCLick }) => (
+  <SingleDayBoxStyled onClick={handleOnCLick}>
     <MiniDate>{dateConverter(dayInfo.date)}</MiniDate>
     <MiniIconAndTempWrapper>
       <MiniWeatherIcon icon={dayInfo.icon} />
