@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
 import {
   WeatherContainerStyled,
   WeatherContainerWrapper,
@@ -8,11 +8,19 @@ import DetailsBox from "./DetailsBox/DetailsBox";
 import FiveDaysForecastBox from "./FiveDaysForecastBox/FiveDaysForecastBox";
 import { initialWeatherData } from "../../data/initialWeatherData";
 
-const WeatherContainer = ({ weatherData, scrollBackForFullInfo }) => {
+const WeatherContainer = ({ weatherData }) => {
+  const weatherContainerRef = useRef(null);
+
   const [activeData, setActiveData] = useState(initialWeatherData(weatherData));
 
+  const scrollBackForFullInfo = () => {
+    weatherContainerRef.current.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  console.log(activeData);
   return (
-    <WeatherContainerWrapper>
+    <WeatherContainerWrapper ref={weatherContainerRef}>
       <WeatherContainerStyled>
         <MainBox
           main={activeData.main}

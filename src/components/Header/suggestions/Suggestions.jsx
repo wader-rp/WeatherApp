@@ -6,7 +6,10 @@ import {
 export const Suggestions = ({ suggestions, getSuggestionItemProps }) => (
   <SuggestionsStyled>
     {suggestions.map((suggestion) => (
-      <CityStyled {...getSuggestionItemProps(suggestion, {})}>
+      <CityStyled
+        key={suggestion.description}
+        {...getSuggestionItemProps(suggestion, {})}
+      >
         <span>{suggestion.description}</span>
       </CityStyled>
     ))}

@@ -37,12 +37,12 @@ const FiveDaysForecastBox = ({
     handleOneDaySelect(day, setActiveData);
     exchangeData(index, activeData, setFiveDayForecast);
   };
-
+  console.log(fiveDayForecast);
   return (
     <FiveDaysForecastBoxStyled>
       {fiveDayForecast.map((day, index) => (
         <SingleDayBox
-          day={day}
+          dayInfo={day}
           key={index}
           onClick={() => {
             handleOnClick(day, index);
