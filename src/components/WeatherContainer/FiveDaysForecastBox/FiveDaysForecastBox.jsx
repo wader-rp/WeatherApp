@@ -33,9 +33,9 @@ const FiveDaysForecastBox = ({
   }, [weatherData, API_KEY_FIVE_DAYS_FORECAST, lat, lon]);
 
   const handleOnClick = (day, index) => {
+    scrollBackForFullInfo();
     handleOneDaySelect(day, setActiveData);
     exchangeData(index, activeData, setFiveDayForecast);
-    scrollBackForFullInfo();
   };
 
   return (

@@ -2,7 +2,7 @@ import { AppStyled, MainPage, DotsStyled, Error404 } from "./App.styled";
 import { GlobalStyles } from "./style/GlobalStyles";
 import Header from "./components/Header/Header";
 import WeatherContainer from "./components/WeatherContainer/WeatherContainer";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { MutatingDots } from "react-loader-spinner";
 
 export const App = () => {
@@ -46,8 +46,9 @@ export const App = () => {
   }, [city, API_KEY]);
 
   const scrollBackForFullInfo = () => {
-    console.log(weatherContainerRef.current);
-    weatherContainerRef.current?.scrollIntoView({ behavior: "smooth" });
+    weatherContainerRef.current.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   return (
