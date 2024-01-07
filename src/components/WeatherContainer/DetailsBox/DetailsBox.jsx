@@ -43,7 +43,7 @@ const DetailsBox = ({
         <DetailsData>
           <DetailsDataWrapper>
             <WeatherContainerDetailsData
-              desc={"FeelsLike"}
+              desc={"Feels Like"}
               descValue={`${Math.round(feelsLike)}°C`}
             />
             <WeatherContainerDetailsData

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { borderRadius, boxShadow } from "../../App.styled";
 
 export const HeaderStyled = styled.header`
   display: flex;
@@ -9,7 +10,7 @@ export const HeaderStyled = styled.header`
   gap: 2rem;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     flex-direction: column;
   }
 `;
@@ -24,17 +25,17 @@ export const CitiesDropDownWrapper = styled.div`
 `;
 
 export const CityInputStyled = styled.input`
-  border: 5px rgba(218, 150, 0, 0.87) solid;
+  border: 2px rgba(218, 150, 0, 0.87) solid;
   background-color: rgba(1, 58, 224, 0.3);
   padding: 0.45rem 1rem;
   font-size: 1.5rem;
-  width: 20rem;
+  width: 26rem;
   color: white;
   letter-spacing: 4px;
   font-weight: 600;
-  text-shadow: 0.7px 0.7px 1.5px #000000;
-  box-shadow: 4px 4px 10px rgb(1, 55, 119);
-  border-radius: 10px;
+
+  box-shadow: ${boxShadow};
+  border-radius: ${borderRadius};
   z-index: 1;
 
   transition: background 0.3s, transform 0.3s;
@@ -55,10 +56,8 @@ export const CityInputStyled = styled.input`
 export const ClearInput = styled.div`
   position: absolute;
   color: rgba(218, 150, 0, 0.87);
-  top: 30%;
+  top: 25%;
   left: 90%;
-  overflow: visible;
-
   cursor: pointer;
   z-index: 2;
   font-weight: bolder;
@@ -70,10 +69,7 @@ export const HeaderAndSuggestionsWrapper = styled.div`
   gap: 0;
 `;
 
-export const AutocompleteDropdownStyled = styled.div`
-  color: black;
-  max-width: 100%;
-`;
+export const AutocompleteDropdownStyled = styled.div``;
 
 export const WeatherAppLogo = styled.img`
   width: 5rem;
@@ -86,7 +82,7 @@ export const LogoAndTitleWrapper = styled.div`
 `;
 
 export const WeatherAppTitle = styled.span`
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
   letter-spacing: 2px;
   color: #efefef;
+  font-size: 2rem;
 `;

@@ -14,9 +14,7 @@ const WeatherContainer = ({ weatherData }) => {
   const [activeData, setActiveData] = useState(initialWeatherData(weatherData));
 
   const scrollBackForFullInfo = () => {
-    weatherContainerRef.current.scrollIntoView({
-      behavior: "auto",
-    });
+    weatherContainerRef.current.scrollIntoView({ behavior: "auto" });
   };
 
   return (

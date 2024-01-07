@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { borderRadius, boxShadow } from "../../../../App.styled";
 
 export const SingleDayBoxStyled = styled.div`
   flex: 1;
@@ -8,8 +9,8 @@ export const SingleDayBoxStyled = styled.div`
   flex-direction: column;
   padding: 2rem;
   min-width: min-content;
-  border-radius: 10px;
-  box-shadow: 7px 7px 10px rgb(1, 55, 119);
+  border-radius: ${borderRadius};
+  box-shadow: ${boxShadow};
   background-color: rgba(1, 58, 224, 0.3);
   z-index: 1;
   cursor: pointer;
@@ -26,8 +27,7 @@ export const SingleDayBoxStyled = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      border-radius: 10px;
-      overflow: hidden;
+      border-radius: ${borderRadius};
       letter-spacing: 7px;
       height: 100%;
       width: 100%;
@@ -71,7 +71,6 @@ export const MiniIconAndTempWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  text-wrap: nowrap;
 `;
 export const MiniDate = styled.h5`
   display: flex;
@@ -79,7 +78,8 @@ export const MiniDate = styled.h5`
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
-  text-wrap: no-wrap;
+  text-wrap: nowrap;
+  letter-spacing: 2px;
 
   @media (max-width: 1440px) {
     font-size: 0.9rem;

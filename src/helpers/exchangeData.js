@@ -2,9 +2,7 @@ export const exchangeData = (index, activeData, setFiveDaysState) => {
   setFiveDaysState((prev) => {
     const copy = [...prev];
     copy.splice(index, 1);
-    if (copy.length !== 5) {
-      copy.unshift(activeData);
-    }
+    copy.unshift(activeData);
     copy.sort((a, b) => {
       const keyA = a.date;
       const keyB = b.date;

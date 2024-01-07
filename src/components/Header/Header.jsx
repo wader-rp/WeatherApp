@@ -49,16 +49,15 @@ const Header = ({ city, setCity }) => {
               ></CityInputStyled>
               <ClearInput onClick={() => setCity("")}>X</ClearInput>
             </InputWrapper>
-            <AutocompleteDropdownStyled>
-              {loading ? (
-                <div>Loading...</div>
-              ) : (
-                <Suggestions
-                  suggestions={suggestions}
-                  getSuggestionItemProps={getSuggestionItemProps}
-                />
-              )}
-            </AutocompleteDropdownStyled>
+
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <Suggestions
+                suggestions={suggestions}
+                getSuggestionItemProps={getSuggestionItemProps}
+              />
+            )}
           </HeaderAndSuggestionsWrapper>
           <CitiesDropdown setCity={setCity} />
         </HeaderStyled>

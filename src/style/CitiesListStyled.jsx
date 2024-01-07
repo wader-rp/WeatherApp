@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { borderRadius } from "../App.styled";
 
 export const CitiesListStyled = styled.div`
   position: absolute;
@@ -13,7 +14,7 @@ export const CitiesListStyled = styled.div`
   flex-direction: column;
   background-color: rgba(1, 58, 224, 0.4);
   padding: 0.7rem;
-  border-radius: 10px;
+  border-radius: ${borderRadius};
   z-index: 20;
   margin-top: 5rem;
 `;

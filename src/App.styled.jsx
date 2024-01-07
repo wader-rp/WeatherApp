@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const boxShadow = "4px 4px 10px rgb(1, 55, 119)";
+export const textColor = "rgb(255, 200, 0)";
+export const borderRadius = "5px";
+
 export const AppStyled = styled.div`
   position: fixed;
   top: 0;
@@ -27,10 +31,7 @@ export const DotsStyled = styled.div`
 `;
 
 export const Error404 = styled.h3`
-  display: flex;
-  text-align: center;
-  margin-top: -1.4rem;
-  justify-content: center;
+  color: #ffffff;
+  font-size: 2rem;
   margin-top: 5rem;
-  text-shadow: 0.1px 0.1px #ec0000;
 `;

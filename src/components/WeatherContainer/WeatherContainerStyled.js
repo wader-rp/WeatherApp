@@ -4,7 +4,7 @@ export const WeatherContainerStyled = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  margin: 2rem 0;
+  margin-top: 3rem;
   gap: 2rem;
   padding: 0 2rem;
 
@@ -12,6 +12,7 @@ export const WeatherContainerStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 0.5rem 0.5rem 0 0.5rem;
+    margin-top: 0;
   }
 
   @media (max-width: 768px) {
@@ -19,6 +20,4 @@ export const WeatherContainerStyled = styled.div`
   }
 `;
 
-export const WeatherContainerWrapper = styled.div`
-  overflow-x: hidden;
-`;
+export const WeatherContainerWrapper = styled.div``;

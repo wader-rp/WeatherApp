@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { borderRadius, boxShadow } from "../../../App.styled";
 const mainBoxBackgroundColor = "rgba(1, 58, 224, 0.3)";
 
 export const MainBoxStyled = styled.div`
@@ -11,9 +12,8 @@ export const MainBoxStyled = styled.div`
   flex: 1;
   min-height: 27rem;
   height: 80%;
-  border-radius: 10px;
-  box-shadow: 7px 7px 10px rgb(1, 55, 119);
-
+  border-radius: ${borderRadius};
+  box-shadow: ${boxShadow};
   background-color: ${mainBoxBackgroundColor};
 
   @media (max-width: 1440px) {

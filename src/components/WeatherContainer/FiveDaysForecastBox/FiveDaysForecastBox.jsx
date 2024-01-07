@@ -38,6 +38,8 @@ const FiveDaysForecastBox = ({
     exchangeData(index, activeData, setFiveDayForecast);
   };
 
+  console.log(fiveDayForecast);
+
   return (
     <FiveDaysForecastBoxStyled>
       {fiveDayForecast.map((day, index) => (

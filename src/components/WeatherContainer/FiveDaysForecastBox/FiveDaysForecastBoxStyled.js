@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { borderRadius } from "../../../App.styled";
 
 export const FiveDaysForecastBoxStyled = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ export const FiveDaysForecastBoxStyled = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 25%;
-  border-radius: 10px;
+  border-radius: ${borderRadius};
   padding: 1rem 0;
 
   @media (max-width: 768px) {

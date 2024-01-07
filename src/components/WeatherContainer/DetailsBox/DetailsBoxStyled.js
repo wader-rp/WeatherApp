@@ -1,8 +1,7 @@
 import styled from "styled-components";
+import { borderRadius, boxShadow, textColor } from "../../../App.styled";
 
 const detailsBoxBackgroundColor = "rgba(1, 58, 224, 0.3)";
-const textColor = "rgb(255, 174, 0)";
-const boxShadow = "3px 0 70px rgba(1, 58, 224, 0.3)";
 
 export const DetailsBoxStyled = styled.div`
   display: flex;
@@ -12,7 +11,7 @@ export const DetailsBoxStyled = styled.div`
   padding: 2rem;
   gap: 4rem;
   border-radius: 5px;
-  box-shadow: 7px 7px 10px rgb(1, 55, 119);
+  box-shadow: ${boxShadow};
   background-color: ${detailsBoxBackgroundColor};
 
   @media (max-width: 1440px) {
@@ -30,8 +29,8 @@ export const DetailsData = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  box-shadow: ${boxShadow};
-  border-radius: 10px;
+  box-shadow: 3px 0 70px rgba(1, 58, 224, 0.3);
+  border-radius: ${borderRadius};
   height: 100%;
   padding: 1rem;
 `;
@@ -40,6 +39,7 @@ export const DataDisplay = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 2.2rem;
+  text-wrap: nowrap;
   color: white;
   gap: 0.3rem;
   width: 25%;
@@ -54,7 +54,6 @@ export const DataInfo = styled.div`
   letter-spacing: 3.5px;
   font-weight: 600;
   font-size: 1.3rem;
-  text-shadow: 1.5px 1.5px 2.5px #000000;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -143,7 +142,6 @@ export const SunriseSunset = styled.div`
   letter-spacing: 3.5px;
   font-weight: 600;
   font-size: 1.5rem;
-  text-shadow: 1.5px 1.5px 2.5px #000000;
 
   @media (max-width: 768px) {
     font-size: 1rem;

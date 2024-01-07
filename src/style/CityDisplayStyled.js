@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { borderRadius } from "../App.styled";
 
 export const CityStyled = styled.div`
   color: #fdfdfd;
   border: 2px rgba(218, 150, 0, 0.69) solid;
   background-color: rgba(1, 58, 224, 1);
-  border-radius: 10px;
+  border-radius: ${borderRadius};
   padding: 7px 15px 7px 15px;
   display: flex;
   min-width: 9rem;
@@ -22,7 +23,7 @@ export const CityStyled = styled.div`
     left: 0;
     right: -1px;
     bottom: -1px;
-    border-radius: 10px;
+    border-radius: ${borderRadius};
     background-color: rgba(218, 150, 0, 0.87);
     transform: scaleY(0);
     transform-origin: bottom;
@@ -36,5 +37,5 @@ export const CityStyled = styled.div`
 `;
 
 export const SuggestionsStyled = styled.div`
-  max-width: 24.5rem;
+  max-width: 26rem;
 `;
