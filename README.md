@@ -2,6 +2,8 @@
 
 A simple and elegant weather application built using React.js and Styled Components.
 
+🌞[Check weather now!](https://weatherapp-waderrp.netlify.app)
+
 ## Overview
 
 This project is a straightforward weather application that provides information about the weather in a user-chosen location. It leverages React.js for the frontend development and utilizes Styled Components for a clean and maintainable styling approach.
